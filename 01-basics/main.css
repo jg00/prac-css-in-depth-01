@@ -10,7 +10,8 @@ body {
   color: #2ddf5c;
 }
 
-h1 {
+/* combinators: adjacent sibling +, general sibling ~, child >, descendant space*/
+#product-overview h1 {
   color: #fff;
   font-family: "Anton", sans-serif;
 }
