@@ -1,9 +1,13 @@
-/* html {
-  font-family: "Roboto", sans-serif;
-} */
+body {
+  font-family: "Montserrat", sans-serif;
+}
 
-section {
+#product-overview {
   background: #ff1b68;
+}
+
+.section-title {
+  color: #2ddf5c;
 }
 
 h1 {
