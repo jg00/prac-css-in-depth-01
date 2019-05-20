@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  color: palevioletred;
+  font-family: sans-serif;
+}
+
+.code-selector {
+  color: green;
+}
+
+code {
+  color: red;
+  font-family: monospace;
+}
+
+ol li {
+  color: gray;
+}
+
+li ~ li {
+  background-color: black;
+  color: white;
+}
+
+ol li:first-child {
+  background-color: orangered;
+  color: white;
+}
