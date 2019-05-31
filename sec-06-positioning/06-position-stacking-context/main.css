@@ -20,7 +20,6 @@ body {
   padding: 20px;
   border: 5px solid black;
   margin: 10px;
-
   position: fixed;
 }
 
@@ -46,8 +45,7 @@ body {
   left: 150px;
   width: 270px;
   height: 200px;
-
-  z-index: 1;
+  z-index: 1; /* parent */
 }
 
 .contact-us {
@@ -55,19 +53,27 @@ body {
   top: 180px;
   left: 320px;
   width: 180px;
+  z-index: 100;
 }
 
+/* child of headline */
 .image-1 {
   top: 200px;
   left: 230px;
+  position: fixed;
 }
 
+/* child of headline */
 .image-2 {
   top: 230px;
   left: 260px;
+  position: fixed;
+  z-index: 101;
 }
 
+/* child of headline */
 .image-3 {
-  left: 300px;
   top: 260px;
+  left: 300px;
+  position: fixed;
 }
