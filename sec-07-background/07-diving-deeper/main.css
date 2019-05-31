@@ -1,7 +1,7 @@
 /* Start of main header section */
 #product-overview {
   /* -image -position / -size -repeat (-origin -clip or just define one for same value) -attachment */
-  background: url("freedom.jpg") left 10% bottom 20% / cover no-repeat
+  background: url("./images/freedom.jpg") left 10% bottom 20% / cover no-repeat
     border-box;
   /* background: url("freedom.jpg") center / cover no-repeat; */
 
