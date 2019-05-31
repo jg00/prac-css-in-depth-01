@@ -18,6 +18,7 @@ main {
   border-left: none;
 
   position: relative;
+  /* z-index: 1; */
 }
 
 .package:hover,
@@ -49,6 +50,8 @@ main {
   background: #ff5454;
   padding: 8px;
   border-radius: 6%;
+
+  /* z-index: 10; */
 }
 
 .package__info {
