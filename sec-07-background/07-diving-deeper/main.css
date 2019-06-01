@@ -1,8 +1,9 @@
 /* Start of main header section */
 #product-overview {
+  /**** BACKGROUND ****/
   /* -image -position / -size -repeat (-origin -clip or just define one for same value) -attachment */
-  background: url("./images/freedom.jpg") left 10% bottom 20% / cover no-repeat
-    border-box;
+  /* background: url("./images/freedom.jpg") left 10% bottom 20% / cover no-repeat
+    border-box; */
   /* background: url("freedom.jpg") center / cover no-repeat; */
 
   /* These below with single (/*) replaced with above */
@@ -32,6 +33,34 @@
 
   /*** -attachment sets the scrolling behavior of the background image */
   /*** fixed, scroll, local */
+
+  /**** LINEAR-GRADIENTS ****/
+  /* liner-gradients - linear and radial gradients are treated as images. */
+  /* background-image: linear-gradient(to left bottom, red, blue); */
+  /* background-image: linear-gradient(180deg, red, transparent); */
+  /* background-image: linear-gradient(
+    180deg,
+    red 70%,
+    blue 80%,
+    rgba(0, 0, 0, 0.5)
+  ); */
+
+  /**** RADIAL-GRADIENTS ****/
+  /* background-image: radial-gradient(ellipse at top, red, blue, green); */
+  /* background-image: radial-gradient(circle at 20% 50%, red, blue, green); */
+  /* background-image: radial-gradient(circle 20px at 20% 50%, red, blue, green); */
+  background-image: radial-gradient(
+    ellipse farthest-side at 20% 50%,
+    red,
+    blue 30%,
+    yellow
+  );
+  /* background-image: radial-gradient(
+    ellipse 20px 50px at 20% 50%,
+    red,
+    blue,
+    green
+  ); */
 
   /* container */
   width: 100%;
