@@ -7,7 +7,7 @@
   /* background: url("./images/freedom.jpg") center / cover no-repeat; */
 
   background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
-    url("./images/freedom.jpg") left 10% bottom 20% / cover, #ff1b68 no-repeat;
+    url("./images/freedom.jpg") left 10% bottom 70% / cover, #ff1b68 no-repeat;
 
   /*** These below with single (/*) replaced with above */
   /* background-image: url("freedom.jpg"); */
@@ -61,8 +61,8 @@
   ); */
 
   /**** container ****/
-  width: 100%;
-  height: 528px;
+  width: 100vw; /* 100% */
+  height: 33vh; /* 528px */
   /* padding: 10px; */
   margin-top: 2.75rem; /* 43px */
   position: relative;
@@ -90,7 +90,7 @@
 /* Start of plan cards */
 .plan__list {
   width: 80%;
-  margin: auto;
+  margin: auto; /* maring: auto only works for block level elements with an explicitly assigned width. */
   text-align: center;
 }
 
