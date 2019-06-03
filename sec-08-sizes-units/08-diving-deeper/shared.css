@@ -25,7 +25,7 @@ body {
 .main-header {
   background: darkseagreen;
   width: 100%;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem; /* 8px 16px */
 
   position: fixed;
   top: 0;
@@ -44,10 +44,10 @@ Change to inline-block so child element <img> will not respect '%' values. */
   color: #0e4f1f;
   text-decoration: none;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 1.5rem; /* 22px*/
 
-  /* height: 22px; */
-  width: 22px;
+  /* height: 1.5rem; */ /* 22px */
+  width: 1.5rem; /* 22px */
   display: inline-block;
 }
 
@@ -72,14 +72,15 @@ Change to inline-block so child element <img> will not respect '%' values. */
 
 .main-nav__item {
   display: inline-block;
-  margin: 0 16px;
+  margin: 0 1rem; /* 0 16px */
 }
 
 .main-nav__item a {
   text-decoration: none;
   color: #0e4f1f;
   font-weight: bold;
-  padding: 3px;
+  /* padding: 3px; */
+  padding: 0.2rem 0;
 }
 
 .main-nav__item a:hover,
@@ -91,7 +92,7 @@ Change to inline-block so child element <img> will not respect '%' values. */
 .main-nav__item--cta a {
   color: white;
   background: #ff1b68;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem; /* 8px 16px */
   border-radius: 8px;
 }
 
@@ -106,8 +107,8 @@ Change to inline-block so child element <img> will not respect '%' values. */
 /* Start of footer */
 .main-footer {
   background-color: black;
-  padding: 32px;
-  margin-top: 48px;
+  padding: 2rem; /* 32px */
+  margin-top: 3rem; /* 48px */
 }
 
 .main-footer__links {
@@ -119,7 +120,7 @@ Change to inline-block so child element <img> will not respect '%' values. */
 
 .main-footer__link {
   display: inline-block;
-  margin: 0 16px;
+  margin: 0 1rem; /* 0 16px */
 }
 
 .main-footer__link a {
@@ -140,7 +141,7 @@ Change to inline-block so child element <img> will not respect '%' values. */
   color: white;
   font: inherit;
   border: 1.5px solid #0e4f1f;
-  padding: 8px;
+  padding: 0.5rem; /* 8px */
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
