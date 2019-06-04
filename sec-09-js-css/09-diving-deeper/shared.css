@@ -28,7 +28,7 @@ body {
 }
 /* End of backdrop */
 
-/* Start of header - Link to home, nav sections */
+/* Start of header - Link to side navigation button, home, nav sections */
 .main-header {
   background: darkseagreen;
   width: 100%;
@@ -45,6 +45,30 @@ body {
   vertical-align: middle;
 }
 
+/* Start of header toggle button*/
+.toggle-button {
+  width: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button__bar {
+  width: 100%;
+  height: 0.2rem;
+  background: black;
+  display: block;
+  margin: 0.6rem 0;
+}
+/* End of header toggle button */
+
 /* Note that by default our <a> is an inline element.  
 Change to inline-block so child element <img> will not respect '%' values. */
 .main-header__brand {
@@ -53,21 +77,22 @@ Change to inline-block so child element <img> will not respect '%' values. */
   font-weight: bold;
   font-size: 1.5rem; /* 22px*/
 
-  /* height: 1.5rem; */ /* 22px */
-  width: 1.5rem; /* 22px */
+  height: 1.5rem; /* 22px */
+  /* width: 1.5rem; */ /* 22px */
   display: inline-block;
+  vertical-align: middle;
 }
 
 .main-header__brand img {
   /* height: 22px; */ /* Images height adjusts */
-  /* height: 100%; */ /* Returns back to original image height b/c parent <a> tag is by default an 'inline' element. */
-  width: 100%;
+  height: 100%; /* Returns back to original image height b/c parent <a> tag is by default an 'inline' element. */
+  /* width: 100%; */
 }
 
 .main-nav {
   display: inline-block;
   text-align: right;
-  width: calc(100% - 74px);
+  width: calc(100% - 122px);
   vertical-align: middle;
 }
 
@@ -82,12 +107,12 @@ Change to inline-block so child element <img> will not respect '%' values. */
   margin: 0 1rem; /* 0 16px */
 }
 
-.main-nav__item a {
+.main-nav__item a,
+.mobile-nav__item a {
   text-decoration: none;
   color: #0e4f1f;
   font-weight: bold;
-  /* padding: 3px; */
-  padding: 0.2rem 0;
+  padding: 0.2rem 0; /* 3px */
 }
 
 .main-nav__item a:hover,
@@ -96,7 +121,8 @@ Change to inline-block so child element <img> will not respect '%' values. */
   border-bottom: 5px solid white;
 }
 
-.main-nav__item--cta a {
+.main-nav__item--cta a,
+.mobile-nav__item--cta a {
   color: white;
   background: #ff1b68;
   padding: 0.5rem 1rem; /* 8px 16px */
@@ -104,7 +130,9 @@ Change to inline-block so child element <img> will not respect '%' values. */
 }
 
 .main-nav__item--cta a:hover,
-.main-nav__item--cta a:active {
+.main-nav__item--cta a:active,
+.mobile-nav__item--cta a:hover,
+.mobile-nav__item--cta a:active {
   color: #ff1b68;
   background: white;
   border: none;
@@ -141,8 +169,37 @@ Change to inline-block so child element <img> will not respect '%' values. */
 }
 /* End of footer */
 
-/* Start of shared button styles */
+/* Start of side navigation */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 80%;
+  height: 100vh;
+}
 
+.mobile-nav__items {
+  width: 90%;
+  height: 100%;
+  list-style: none;
+  margin: 10% auto;
+  padding: 0;
+  text-align: center;
+}
+
+.mobile-nav__item {
+  margin: 1rem 0;
+}
+
+.mobile-nav__item a {
+  font-size: 1.5rem;
+}
+/* End of side navigation */
+
+/* Start of shared button styles */
 .button {
   background-color: #0e4f1f;
   color: white;
