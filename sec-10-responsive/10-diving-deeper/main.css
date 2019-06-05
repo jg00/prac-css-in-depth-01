@@ -6,8 +6,13 @@
     border-box; */
   /* background: url("./images/freedom.jpg") center / cover no-repeat; */
 
+  /* 
   background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
     url("./images/freedom.jpg") left 10% bottom 70% / cover, #ff1b68 no-repeat;
+  */
+
+  background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
+    url("./images/freedom.jpg") center / cover, #ff1b68 no-repeat border-box;
 
   /*** These below with single (/*) replaced with above */
   /* background-image: url("freedom.jpg"); */
@@ -71,21 +76,36 @@
   /* border: 10px dashed red; */
 }
 
+/* Slogan */
+#product-overview h1 {
+  color: #fff;
+  font-family: "Anton", sans-serif;
+  /* margin: 0; */
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
+  font-size: 1.6rem;
+}
+/* End of main header section */
+
+/* Start Media - 40rem (640px) */
+@media (min-width: 40rem) {
+  #product-overview {
+    height: 40vh;
+    background-position: 50% 25%;
+  }
+
+  #product-overview h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Start choose your plan */
 .section-title {
   color: #2ddf5c;
   text-align: center;
 }
-
-#product-overview h1 {
-  color: #fff;
-  font-family: "Anton", sans-serif;
-
-  margin: 0;
-  position: absolute;
-  bottom: 5%;
-  left: 3%;
-}
-/* End of main header section */
+/* End choose your plan */
 
 /* Start of plan cards */
 .plan__list {
@@ -94,6 +114,7 @@
   text-align: center;
 }
 
+/* Plan cards */
 .plan {
   background: #d5ffdc;
   text-align: center;
