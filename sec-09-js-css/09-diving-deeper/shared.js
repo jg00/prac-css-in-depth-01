@@ -8,6 +8,10 @@ const mobileNav = document.querySelector(".mobile-nav");
 // console.dir(selectPlanButtons);
 // console.log(selectPlanButtons);
 
+// Accessing properties from within JS code.
+// console.dir(backdrop.style.backgroundImage);  // Like accessing from a variable from an object ie dashes not allowed.
+// console.dir(backdrop.style["background-image"]);
+
 for (let button of selectPlanButtons) {
   button.addEventListener("click", function() {
     // modal.style.display = "block";
@@ -21,17 +25,20 @@ for (let button of selectPlanButtons) {
 backdrop.addEventListener("click", function() {
   // mobileNav.style.display = "none";
   mobileNav.classList.remove("open");
-  console.log(this);
   closeModal();
 });
 
-modalNoButton.addEventListener("click", closeModal);
+if (modalNoButton) {
+  modalNoButton.addEventListener("click", closeModal);
+}
 
 function closeModal() {
   // backdrop.style.display = "none";
   // modal.style.display = "none";
   backdrop.classList.remove("open");
-  modal.classList.remove("open");
+  if (modal) {
+    modal.classList.remove("open");
+  }
 }
 
 toggleButton.addEventListener("click", function() {

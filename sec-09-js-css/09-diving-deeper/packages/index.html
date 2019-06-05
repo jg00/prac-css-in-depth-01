@@ -27,13 +27,25 @@
     <!-- Start of header - Link to home, nav sections -->
     <header class="main-header">
       <div>
+        <!-- Start of header toggle button -->
+        <button class="toggle-button">
+          <span class="toggle-button__bar"></span>
+          <span class="toggle-button__bar"></span>
+          <span class="toggle-button__bar"></span>
+        </button>
+        <!-- End of header toggle button -->
+
+        <!-- Start of header brand -->
         <a href="../index.html" class="main-header__brand">
           <img
             src="../images/uhost-icon.png"
             alt="uHost - Your favorite hosting company"
           />
         </a>
+        <!-- End of header brand -->
       </div>
+
+      <!-- Start of header nav -->
       <nav class="main-nav">
         <ul class="main-nav__items">
           <li class="main-nav__item">
@@ -47,8 +59,25 @@
           </li>
         </ul>
       </nav>
+      <!-- End of header nav -->
     </header>
     <!-- End of header -->
+
+    <!-- Start of side navigation -->
+    <nav class="mobile-nav">
+      <ul class="mobile-nav__items">
+        <li class="mobile-nav__item">
+          <a href="index.html">Packages</a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="../customers/index.html">Customers</a>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--cta">
+          <a href="../start-hosting/index.html">Start Hosting</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- End of side navigation -->
 
     <!-- Start of main (three sections) -->
     <main>
@@ -103,5 +132,9 @@
       </nav>
     </footer>
     <!-- End of footer -->
+
+    <!-- Start of scripts -->
+    <script src="../shared.js" type="text/javascript"></script>
+    <!-- End of scripts -->
   </body>
 </html>
