@@ -28,7 +28,7 @@ body {
 }
 /* End of backdrop */
 
-/* Start of header - Link to side navigation button, home, nav sections */
+/* Start of main header - Link to side navigation button, home, nav sections */
 .main-header {
   background: darkseagreen;
   width: 100%;
@@ -69,6 +69,7 @@ body {
 }
 /* End of header toggle button */
 
+/* Start of header brand */
 /* Note that by default our <a> is an inline element.  
 Change to inline-block so child element <img> will not respect '%' values. */
 .main-header__brand {
@@ -88,7 +89,9 @@ Change to inline-block so child element <img> will not respect '%' values. */
   height: 100%; /* Returns back to original image height b/c parent <a> tag is by default an 'inline' element. */
   /* width: 100%; */
 }
+/* End of header brand */
 
+/* Start of header/side nav */
 .main-nav {
   display: inline-block;
   text-align: right;
@@ -137,7 +140,9 @@ Change to inline-block so child element <img> will not respect '%' values. */
   background: white;
   border: none;
 }
-/* End of header - Link to home, nav sections * */
+/* Start of header/side nav */
+
+/* End of main header - Link to home, nav sections * */
 
 /* Start of footer */
 .main-footer {
@@ -221,4 +226,7 @@ Change to inline-block so child element <img> will not respect '%' values. */
   outline: none;
 }
 
+.open {
+  display: block !important; /* To override specifity */
+}
 /* End of shared button styles */
