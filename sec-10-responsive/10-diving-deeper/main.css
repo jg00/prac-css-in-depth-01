@@ -89,7 +89,9 @@
 /* End of main header section */
 
 /* Media - 40rem (640px) - adjust product overview image */
-@media (min-width: 40rem) {
+/* @media (min-width: 40rem) and (orientation: portrait) { */
+/* @media (min-width: 40rem) and (min-height: 60rem) { */
+@media (min-width: 40rem) and (min-height: 50rem) {
   #product-overview {
     height: 40vh;
     background-position: 50% 25%;
