@@ -171,6 +171,21 @@
 }
 /* End of plan cards */
 
+/* CONTINUE HERE TO MAKE RESPONSIVE */
+@media (min-width: 40rem) {
+  .plan__list {
+    width: 100%;
+    text-align: center;
+  }
+
+  .plan {
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+  }
+}
+/* CONTINUE HERE TO MAKE RESPONSIVE */
+
 /* Start of main core features sections. */
 #key-features {
   background: #ff1b68;
