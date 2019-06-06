@@ -88,7 +88,7 @@
 }
 /* End of main header section */
 
-/* Start Media - 40rem (640px) - adjust product overview image */
+/* Media - 40rem (640px) - adjust product overview image */
 @media (min-width: 40rem) {
   #product-overview {
     height: 40vh;
@@ -100,32 +100,19 @@
   }
 }
 
-/* Start choose your plan */
 .section-title {
   color: #2ddf5c;
   text-align: center;
 }
-/* End choose your plan */
 
 /* Start of plan cards */
-
-/* .plan__list commented for now */
-/* .plan__list { */
-/** width: 80%; */
-/** margin: auto; */ /* maring: auto only works for block level elements with an explicitly assigned width. */
-
-/* width: 100%; */
-/* text-align: center; */
-/* } */
-
-/* Plan cards */
 .plan {
   background: #d5ffdc;
   text-align: center;
   padding: 1rem; /* 16px*/
   margin: 0.5rem 0; /* 8px */
   /* display: inline-block; */
-  /* width: 30%; */
+  /* width: 30%; */ /* margin: auto only works for block level elements with an explicitly assigned width. */
   width: 100%;
   /* vertical-align: middle; */
 }
@@ -171,7 +158,7 @@
 }
 /* End of plan cards */
 
-/* Start Media - 40rem (640px) - adjust plan card list */
+/* Media - 40rem (640px) - adjust plan card list */
 @media (min-width: 40rem) {
   /* Plans wrapping container */
   .plan__list {
@@ -183,14 +170,11 @@
     display: inline-block;
     width: 30%;
     vertical-align: middle;
-
     min-width: 13rem; /* 208px */
     max-width: 25rem;
   }
 
   .plan--highlighted {
-    /* background: #19b84c; */
-    /* color: white; */
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
   }
 }
@@ -214,30 +198,12 @@
   text-align: center;
 }
 
-/* .key-feature { */
-/* display: inline-block; jg - make inline*/
-/* width: 30%; jg - make li 100% */
-/* width: 100%; */
-/* margin: 16px; */
-/* vertical-align: top; */
-/* } */
-
-/* Start Media - 40rem (640px) - adjust key features list */
+/* Media - 40rem (640px) - adjust key features list */
 @media (min-width: 40rem) {
-  /* .key-feature__list { */
-  /* list-style: none; */
-  /* margin: 0; */
-  /* padding: 0; */
-  /* text-align: center; */
-  /* } */
-
   .key-feature {
     display: inline-block;
     width: 30%;
-    /* width: 100%; */
-    /* margin: 16px; */
     vertical-align: top;
-
     max-width: 25rem;
   }
 }
