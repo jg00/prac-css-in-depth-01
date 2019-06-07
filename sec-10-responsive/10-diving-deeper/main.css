@@ -69,7 +69,7 @@
   /* width: 100vw; */ /* 100vw causing issues, width property not needed here. */
   height: 33vh; /* 528px */
   /* padding: 10px; */
-  margin-top: 2.75rem; /* 43px */
+  margin-top: 3.5rem; /* 3.75rem 60px; 3.5rem 56px */
   position: relative;
 
   /* border: 20px dotted green; */
@@ -91,7 +91,7 @@
 /* Media - 40rem (640px) - adjust product overview image */
 /* @media (min-width: 40rem) and (orientation: portrait) { */
 /* @media (min-width: 40rem) and (min-height: 60rem) { */
-@media (min-width: 40rem) and (min-height: 50rem) {
+@media (min-width: 40rem) and (min-height: 40rem) {
   #product-overview {
     height: 40vh;
     background-position: 50% 25%;

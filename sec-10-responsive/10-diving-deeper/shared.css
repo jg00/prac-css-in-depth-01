@@ -62,10 +62,10 @@ body {
 
 .toggle-button__bar {
   width: 100%;
-  height: 0.2rem;
+  height: 0.2rem; /* 0.2rem 3.2px * 3 = 9.6 */
   background: black;
   display: block;
-  margin: 0.6rem 0;
+  margin: 0.6rem 0; /* 0.6rem 9.6px*/
 }
 /* End of header toggle button */
 
@@ -76,9 +76,9 @@ Change to inline-block so child element <img> will not respect '%' values. */
   color: #0e4f1f;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.5rem; /* 22px*/
+  /* font-size: 1.5rem; */ /* 22px*/
 
-  /* height: 1.5rem; */
+  height: 2.5rem; /* 2.5rem 40px */
   /* height: 1.5rem; */ /* 22px */
   /* width: 1.5rem; */ /* 22px */
   display: inline-block;
@@ -87,10 +87,10 @@ Change to inline-block so child element <img> will not respect '%' values. */
 
 .main-header__brand img {
   /* height: 22px; */ /* Images height adjusts */
-  /* height: 100%; */ /* Returns back to original image height b/c parent <a> tag is by default an 'inline' element. */
+  height: 100%; /* Returns back to original image height b/c parent <a> tag is by default an 'inline' element. */
   /* width: 100%; */
 
-  height: 2.7rem; /* Adjust to be bigger than hamburger menu so height of nav bar stays same when hamburger menu is hidden. */
+  /* height: 2.7rem; */ /* Adjust to be bigger than hamburger menu so height of nav bar stays same when hamburger menu is hidden. */
 }
 /* End of header brand */
 
