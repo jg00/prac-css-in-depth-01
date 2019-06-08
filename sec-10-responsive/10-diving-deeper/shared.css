@@ -7,6 +7,12 @@ body {
   margin: 0;
 }
 
+/* main(100vh) - header(3.5rem) - footer(8rem) */
+main {
+  min-height: calc(100vh - 3.5rem - 8rem);
+  margin-top: 3.5rem;
+}
+
 /* Start of backdrop */
 .backdrop {
   position: fixed;

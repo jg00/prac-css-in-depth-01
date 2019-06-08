@@ -1,5 +1,5 @@
 main {
-  padding-top: 2rem; /* 32px */
+  padding-top: 2.5rem; /* 40px */
 }
 
 .background {
@@ -96,19 +96,15 @@ main {
   color: #bbb;
 }
 
-.main-footer {
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-}
-
 /* Media - 40rem (640px) - adjust customer testimonials */
 @media (min-width: 40rem) {
   main {
     /* font-size: 1.2rem; */
     /* margin: 3rem 0; */ /* 3rem 48px */
-    margin: 3rem auto;
+    /* margin: 3rem auto; */
     max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
