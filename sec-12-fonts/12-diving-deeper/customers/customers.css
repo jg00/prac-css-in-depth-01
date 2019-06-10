@@ -75,6 +75,16 @@ main {
 
 .testimonial__text {
   margin: 0.2rem; /* 3px */
+
+  /* Font properties */
+  /* font-variant: small-caps; */
+  /* font-stretch: ultra-condensed; */
+
+  /* letter-spacing: 0.1rem; */
+  /* white-space: nowrap; */
+  /* white-space: pre; */
+  /* white-space: pre-wrap; */
+  /* white-space: pre-line; */
 }
 
 /* Media - 40rem (640px) - adjust customer testimonials */
