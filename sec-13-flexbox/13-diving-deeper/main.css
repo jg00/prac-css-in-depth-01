@@ -108,6 +108,7 @@
 }
 
 /* Start of plan cards */
+
 .plan {
   background: #d5ffdc;
   text-align: center;
@@ -115,7 +116,7 @@
   margin: 0.5rem 0; /* 8px */
   /* display: inline-block; */
   /* width: 30%; */ /* margin: auto only works for block level elements with an explicitly assigned width. */
-  width: 100%;
+  /* width: 100%; */
   /* vertical-align: middle; */
 }
 
@@ -152,7 +153,6 @@
 .plan__features {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .plan__feature {
@@ -165,19 +165,31 @@
   /* Plans wrapping container */
   .plan__list {
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .plan {
-    display: inline-block;
+    /* display: inline-block; */
     width: 30%;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     min-width: 13rem; /* 208px */
     max-width: 25rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* margin: 0 0.2rem; */
+    height: 28rem;
   }
 
   .plan--highlighted {
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    height: 30rem;
+    z-index: 50;
   }
 }
 
@@ -203,10 +215,15 @@
 /* Media - 40rem (640px) - adjust key features list */
 @media (min-width: 40rem) {
   .key-feature {
-    display: inline-block;
+    /* display: inline-block; */
     width: 30%;
-    vertical-align: top;
+    /* vertical-align: top; */
     max-width: 25rem;
+  }
+
+  .key-feature__list {
+    display: flex;
+    justify-content: center;
   }
 }
 
