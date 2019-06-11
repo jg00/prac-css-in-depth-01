@@ -21,12 +21,12 @@ body {
   height: 1300px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   /* flex-flow: row wrap */
 
   align-items: center; /* refers to the "cross axis" - baseline, flex-start, flex-end, center */
-  justify-content: center; /* refers to the "main axis" - flex-start, flex-end, center */
-  align-content: center; /* allows us to align our items along the "cross axis". (on flex-wrap: wrap) - flex-start, space-between, space-evenly, etc. */
+  justify-content: flex-start; /* refers to the "main axis" - flex-start, flex-end, center */
+  /* align-content: center; */ /* allows us to align our items along the "cross axis". (on flex-wrap: wrap) - flex-start, space-between, space-evenly, etc. */
 }
 
 .item-1 {
@@ -54,6 +54,7 @@ body {
   border: 5px solid black;
   margin: 10px;
   height: 250px;
+  /* align-self: flex-end; */
 }
 
 .item-4 {
@@ -64,6 +65,7 @@ body {
   margin: 10px;
   width: 300px;
   height: 300px;
+  order: 0;
 }
 
 .item-5 {
@@ -73,6 +75,15 @@ body {
   border: 5px solid black;
   margin: 10px;
   width: 350px;
+  /* height: 200px; */
+  /* flex-grow: 1; */
+  /* flex-shrink: 0; */
+  /*flex-basis: 300px; */ /* "Dependent" on and "always" refers to the 'main-axis' (flex-direction).*/
+  /* flex-basis: auto; */ /* If flex-direction: row then this will fall back to the 'width' property and vice-versa for 'column' direction. */
+  /* flex-basis: 300px; */ /* 10% can also be used and that will be in reference to the flex-container. */
+
+  /* flex -grow -shrink - basis */
+  flex: 0 1 auto;
 }
 
 .item-6 {
@@ -82,4 +93,7 @@ body {
   border: 5px solid black;
   margin: 10px;
   width: 350px;
+  order: 0;
+  /* flex-grow: 2; */
+  /* flex-shrink: 0; */
 }
