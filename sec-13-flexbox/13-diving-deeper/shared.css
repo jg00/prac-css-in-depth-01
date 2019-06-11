@@ -195,12 +195,16 @@ Change to inline-block so child element <img> will respect '%' values. */
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: center;
+  /* text-align: center; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-footer__link {
-  display: block;
-  margin: 1rem 0; /* 0 16px */
+  /* display: block; */
+  margin: 0.5rem 0; /* 8px 0 */
 }
 
 .main-footer__link a {
@@ -230,9 +234,14 @@ Change to inline-block so child element <img> will respect '%' values. */
   width: 90%;
   height: 100%;
   list-style: none;
-  margin: 10% auto;
+  margin: 0 auto;
   padding: 0;
-  text-align: center;
+  /* text-align: center; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .mobile-nav__item {
@@ -282,7 +291,12 @@ Change to inline-block so child element <img> will respect '%' values. */
 /* Media - 40rem (640px) - adjust footer links */
 @media (min-width: 40rem) {
   .main-footer__link {
-    display: inline-block;
+    /* display: inline-block; */
     margin: 0 1rem; /* 0 16px */
+  }
+
+  .main-footer__links {
+    flex-direction: row;
+    justify-content: center;
   }
 }
