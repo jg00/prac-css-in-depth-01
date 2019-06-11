@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,400,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+/* main(100vh) - header(3.5rem) - footer(8rem) */
+main {
+  min-height: calc(100vh - 3.5rem - 8rem);
+  margin-top: 3.5rem;
+}
+
+/* Start of backdrop */
+.backdrop {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100vw;
+  height: 100vh;
+
+  /* width: 80vmin; */
+  /* height: 50vh; */
+
+  /* width: 100%; */
+  /* height: 100%; */
+  background: rgba(0, 0, 0, 0.5);
+  /* border: 1px dashed green; */
+}
+/* End of backdrop */
+
+/* Start of main header - Link to side navigation button, home, nav sections */
+.main-header {
+  background: darkseagreen;
+  width: 100%;
+  padding: 0.5rem 1rem; /* 8px 16px */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* .main-header > div {
+  display: inline-block;
+  vertical-align: middle;
+} */
+
+/* Start of header toggle button*/
+.toggle-button {
+  width: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button__bar {
+  width: 100%;
+  height: 0.2rem; /* 0.2rem 3.2px * 3 = 9.6 */
+  background: black;
+  display: block;
+  margin: 0.6rem 0; /* 0.6rem 9.6px*/
+}
+/* End of header toggle button */
+
+/* Start of header brand */
+/* Note that by default our <a> is an inline element.  
+Change to inline-block so child element <img> will respect '%' values. */
+.main-header__brand {
+  color: #0e4f1f;
+  text-decoration: none;
+  font-weight: bold;
+  /* font-size: 1.5rem; */ /* 22px*/
+
+  /* height: 2.5rem; */ /* 2.5rem 40px */
+
+  /* height: 1.5rem; */ /* 22px */
+  /* width: 1.5rem; */ /* 22px */
+
+  /* display: inline-block; */
+  /* vertical-align: middle; */
+}
+
+.main-header__brand img {
+  height: 2.5rem; /* Image no longer based on height 100% of the anchor tag. */
+  vertical-align: middle; /* Align with toggle button.
+
+  /* height: 22px; */ /* Images height adjusts */
+  /* height: 100%; */ /* Returns back to original image height b/c parent <a> tag is by default an 'inline' element. */
+  /* width: 100%; */
+
+  /* height: 2.7rem; */ /* Adjust to be bigger than hamburger menu so height of nav bar stays same when hamburger menu is hidden. */
+}
+/* End of header brand */
+
+/* Start of header/side nav */
+.main-nav {
+  display: none;
+  /* text-align: right; */
+  /* width: calc(100% - 47px); */
+  /* vertical-align: middle; */
+}
+
+.main-nav__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+}
+
+.main-nav__item {
+  /* display: inline-block; */
+  margin: 0 1rem; /* 0 16px */
+}
+
+.main-nav__item a,
+.mobile-nav__item a {
+  text-decoration: none;
+  color: #0e4f1f;
+  font-weight: bold;
+  padding: 0.2rem 0; /* 3px */
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
+  color: white;
+  border-bottom: 5px solid white;
+}
+
+.main-nav__item--cta a,
+.mobile-nav__item--cta a {
+  color: white;
+  background: #ff1b68;
+  padding: 0.5rem 1rem; /* 8px 16px */
+  border-radius: 8px;
+}
+
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active,
+.mobile-nav__item--cta a:hover,
+.mobile-nav__item--cta a:active {
+  color: #ff1b68;
+  background: white;
+  border: none;
+}
+/* Start of header/side nav */
+
+/* End of main header - Link to home, nav sections * */
+
+/* Media - 40rem (640px) - hide toggle button */
+@media (min-width: 40rem) {
+  .toggle-button {
+    display: none;
+  }
+
+  .main-nav {
+    display: flex; /* To display b/c was display: none for mobile initially. */
+
+    /* display: inline-block;
+    text-align: right;
+    width: calc(100% - 47px);
+    vertical-align: middle; */
+  }
+}
+
+/* Start of footer */
+.main-footer {
+  background-color: black;
+  padding: 2rem; /* 32px */
+  margin-top: 3rem; /* 48px */
+}
+
+.main-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* text-align: center; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-footer__link {
+  /* display: block; */
+  margin: 0.5rem 0; /* 8px 0 */
+}
+
+.main-footer__link a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-footer__link a:hover,
+.main-footer__link a:active {
+  color: #ccc;
+}
+/* End of footer */
+
+/* Start of side navigation */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 80%;
+  height: 100vh;
+}
+
+.mobile-nav__items {
+  width: 90%;
+  height: 100%;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  /* text-align: center; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-nav__item {
+  margin: 1rem 0;
+}
+
+.mobile-nav__item a {
+  font-size: 1.5rem;
+}
+/* End of side navigation */
+
+/* Start of shared button styles */
+.button {
+  background-color: #0e4f1f;
+  color: white;
+  font: inherit;
+  border: 1.5px solid #0e4f1f;
+  padding: 0.5rem; /* 8px */
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:active {
+  background-color: white;
+  color: #0e4f1f;
+}
+
+.button:focus {
+  outline: none;
+}
+
+/* 'disabled' attribute can be added to button */
+.button[disabled] {
+  cursor: not-allowed;
+  border: #a1a1a1;
+  background: #ccc;
+  color: #a1a1a1;
+}
+
+.open {
+  display: block !important; /* To override specifity */
+}
+/* End of shared button styles */
+
+/* Media - 40rem (640px) - adjust footer links */
+@media (min-width: 40rem) {
+  .main-footer__link {
+    /* display: inline-block; */
+    margin: 0 1rem; /* 0 16px */
+  }
+
+  .main-footer__links {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
