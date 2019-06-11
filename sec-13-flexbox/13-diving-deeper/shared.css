@@ -48,12 +48,16 @@ main {
   top: 0;
   left: 0;
   z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.main-header > div {
+/* .main-header > div {
   display: inline-block;
   vertical-align: middle;
-}
+} */
 
 /* Start of header toggle button*/
 .toggle-button {
@@ -81,23 +85,28 @@ main {
 
 /* Start of header brand */
 /* Note that by default our <a> is an inline element.  
-Change to inline-block so child element <img> will not respect '%' values. */
+Change to inline-block so child element <img> will respect '%' values. */
 .main-header__brand {
   color: #0e4f1f;
   text-decoration: none;
   font-weight: bold;
   /* font-size: 1.5rem; */ /* 22px*/
 
-  height: 2.5rem; /* 2.5rem 40px */
+  /* height: 2.5rem; */ /* 2.5rem 40px */
+
   /* height: 1.5rem; */ /* 22px */
   /* width: 1.5rem; */ /* 22px */
-  display: inline-block;
-  vertical-align: middle;
+
+  /* display: inline-block; */
+  /* vertical-align: middle; */
 }
 
 .main-header__brand img {
+  height: 2.5rem; /* Image no longer based on height 100% of the anchor tag. */
+  vertical-align: middle; /* Align with toggle button.
+
   /* height: 22px; */ /* Images height adjusts */
-  height: 100%; /* Returns back to original image height b/c parent <a> tag is by default an 'inline' element. */
+  /* height: 100%; */ /* Returns back to original image height b/c parent <a> tag is by default an 'inline' element. */
   /* width: 100%; */
 
   /* height: 2.7rem; */ /* Adjust to be bigger than hamburger menu so height of nav bar stays same when hamburger menu is hidden. */
@@ -116,10 +125,12 @@ Change to inline-block so child element <img> will not respect '%' values. */
   margin: 0;
   padding: 0;
   list-style: none;
+
+  display: flex;
 }
 
 .main-nav__item {
-  display: inline-block;
+  /* display: inline-block; */
   margin: 0 1rem; /* 0 16px */
 }
 
@@ -164,10 +175,12 @@ Change to inline-block so child element <img> will not respect '%' values. */
   }
 
   .main-nav {
-    display: inline-block;
+    display: flex; /* To display b/c was display: none for mobile initially. */
+
+    /* display: inline-block;
     text-align: right;
     width: calc(100% - 47px);
-    vertical-align: middle;
+    vertical-align: middle; */
   }
 }
 
