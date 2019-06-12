@@ -3,11 +3,39 @@ body {
 }
 
 .container {
-  /* margin: 20px; */
-  width: 1000px;
+  margin: 20px;
+  height: 500px;
+  /* width: 1000px; */
+
   display: grid;
-  grid-template-columns: 200px 2fr 20% 1fr;
-  grid-template-rows: 5rem 2.5rem;
+
+  /* grid-template-columns: 200px 150px 20%; */
+  /* grid-template-rows: 5rem 2.5rem; */
+
+  /* grid-template-columns: 200px 2fr 20% 1fr; */
+  /* grid-template-rows: 5rem 2.5rem; */
+
+  /* If you want last available column/row to fill remaining space. */
+  /* grid-template-columns: 200px 2fr 20% 1fr; */ /* for columns - will fill any remaining space */
+  /* grid-template-rows: 5rem auto; */ /* for rows - will resize to height of content unless a height was set. */
+
+  /* grid-template-columns: 200px 5rem 20% auto; */ /* for columns - will fill any remaining space */
+  /* grid-template-rows: 5rem auto; */ /* for rows - will resize to height of content unless a height was set. */
+
+  /* grid-template-columns: repeat(4, 25%); */
+  /* grid-template-rows: 5rem auto; */
+
+  /* grid-template-columns: repeat(4, 25%); */
+  /* grid-template-rows: 5rem minmax(10px, 200px) 100px; */
+
+  /* grid-template-columns: repeat(4, 25%); */
+  /* grid-template-rows: 5rem minmax(10px, auto) 100px; */
+
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows:
+    [row-1-start] 5rem [row-1-end row-2-start]
+    minmax(10px, auto) [row-2-end row-3-start]
+    100px [row-3-end];
 }
 
 .el1 {
@@ -16,14 +44,48 @@ body {
 
 .el2 {
   background: rgba(255, 0, 0, 0.5);
+
+  /* Extend element accross. In this scenario, we are not explicitly setting the 
+  starting row position. So the behavior is the grid will try to avoid overlapping. */
+  /* grid-column-start: 1;
+  grid-column-end: -1; */
+
+  /* In this scenario we are explicitly overlaping elements.  Also DOM order dictates which element is on top unless z-index specified. */
+  /* grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: 2;
+  grid-row-end: span 1;  >> This is default an can be commented out.
+  z-index: 10; */
+
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: row-2-start;
+  grid-row-end: span 1; /* This is default an can be commented out. */
+  z-index: 10;
 }
 
 .el3 {
   background: rgba(0, 128, 0, 0.5);
-  grid-column-start: 3;
+
+  /* grid-column-start: 3;
   grid-column-end: 5;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 3; */
+
+  /* grid-column-start: 3;
+  grid-column-end: span 2;
+  grid-row-start: 1;
+  grid-row-end: 3; */
+
+  /* grid-column-start: 2;
+  grid-column-end: span 3;
+  grid-row-start: 1;
+  grid-row-end: 3; */
+
+  grid-column-start: 2;
+  grid-column-end: span 3;
+  grid-row-start: row-1-start;
+  grid-row-end: row-2-end;
 }
 
 .el4 {
