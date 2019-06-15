@@ -31,9 +31,16 @@ body {
   /* grid-template-columns: repeat(4, 25%); */
   /* grid-template-rows: 5rem minmax(10px, auto) 100px; */
 
-  grid-template-columns: repeat(4, 25%);
+  /* grid-template-columns: repeat(4, [col-start] 25% [col-end]);
   grid-template-rows:
     [row-1-start] 5rem [row-1-end row-2-start]
+    minmax(10px, auto) [row-2-end row-3-start]
+    100px [row-3-end]; */
+
+  /* Automatically generated grid areas using prefix"-start" to prefix"-end" */
+  grid-template-columns: [hd-start] repeat(4, [col-start] 25% [col-end]) [hd-end];
+  grid-template-rows:
+    [hd-start] 5rem [hd-end row-2-start]
     minmax(10px, auto) [row-2-end row-3-start]
     100px [row-3-end];
 
@@ -53,6 +60,7 @@ body {
 
 .el1 {
   background: rgba(255, 154, 72, 0.5);
+  grid-column: col-start 2 / col-end 2;
 }
 
 .el2 {
@@ -113,7 +121,10 @@ body {
   /* Named template area - defined at container parent instead */
   /* Important behavior - With grid-area, DOM order is 'not' respected anymore so later elements in the DOM may be adjusted before another earlier element. */
   /* Unless we also apply grid-area to el4 */
-  grid-area: header;
+  /* grid-area: header; */
+
+  /* Automatically generated grid areas using prefix"-start" to prefix"-end" */
+  grid-area: hd;
 }
 
 .el4 {
