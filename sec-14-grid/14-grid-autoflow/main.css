@@ -1,0 +1,47 @@
+.container {
+  margin: 20px;
+  display: grid;
+
+  /* Explicit grid definition vs auto 
+      - auto-fill - fill row with as many items as possible.  You can restrict by adding a max-width property to your container.
+      - auto-fit - good if you do not have enough elements to fill the row.  This will center automatically. */
+  grid-template-columns: repeat(3, 10rem);
+  /* grid-template-columns: repeat(auto-fill, 10rem); */
+  /* grid-template-columns: repeat(auto-fit, 10rem); */
+  grid-template-rows: 20rem;
+  justify-content: center;
+  grid-gap: 1.5rem;
+
+  /* Implicit grid definition */
+  /* Allows us to specify the size of implicitly created rows. */
+  /* grid-auto-rows: auto; */
+  /* grid-auto-rows: 12rem; */
+  grid-auto-rows: minmax(8rem, auto);
+
+  /* Control auto-placement of new elements added & and control size. */
+  grid-auto-flow: row dense;
+  /* grid-auto-flow: column; */
+  grid-auto-columns: 5rem;
+}
+
+.quote {
+  border: 1px solid #fa923f;
+  background: #ffbd87;
+  font-family: sans-serif;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.quote:nth-of-type(2) {
+  /* This is implicit positioning of the element therefore later elements will be positioned according to where it is in the DOM. */
+  grid-column: span 2;
+  /* If you explicitly assign position, later elements will be repositioned to fit spaces or use "grid-auto-flow: row dense" on the container to overrde this default behavior.  */
+  /* grid-column: 1 / 3;
+  grid-row: 2 / 3; */
+}
+
+.quote--featured {
+  border: #ff4213;
+  background: #ff9f87;
+  grid-column: span 2;
+}
