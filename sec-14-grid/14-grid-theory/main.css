@@ -1,11 +1,16 @@
+/* html {
+  height: 100%;
+} */
+
 body {
   margin: 0;
+  /* height: 100%; */
 }
 
 .container {
   margin: 20px;
-  height: 500px;
-  /* width: 1000px; */
+  height: 800px;
+  /* width: 800px; */
 
   display: grid;
 
@@ -38,10 +43,11 @@ body {
     100px [row-3-end]; */
 
   /* Automatically generated grid areas using prefix"-start" to prefix"-end" */
-  grid-template-columns: [hd-start] repeat(4, [col-start] 25% [col-end]) [hd-end];
+  grid-template-columns: [hd-start] repeat(4, [col-start] 20% [col-end]) [hd-end];
   grid-template-rows:
     [hd-start] 5rem [hd-end row-2-start]
-    minmax(10px, auto) [row-2-end row-3-start]
+    /* minmax(10px, auto) [row-2-end row-3-start] */
+    minmax(10px, 20rem) [row-2-end row-3-start]
     100px [row-3-end];
 
   /* grid-column-gap: 20px;
@@ -54,13 +60,55 @@ body {
   /* Named template area definition */
   grid-template-areas:
     "header header header header"
-    ". . main main"
+    ". side main main"
     "footer footer footer footer ";
+
+  /* Positioning grid items within their "rows" (x-axis) */
+  /* justify-items: stretch; */
+  /* justify-items: center; */
+  /* justify-items: start; */
+  /* justify-items: end; */
+
+  /* Positioning grid items within their "columns" (y-axis) */
+  /* align-items: stretch; */
+  /* align-items: center; */
+  /* align-items: start; */
+  /* align-items: end; */
+
+  /* Positioning entire grid content on x-axis */
+  /* justify-content: stretch; */
+  /* justify-content: center; */
+  /* justify-content: start; */
+  /* justify-content: end; */
+
+  /* Positioning entire grid content on y-axis */
+  /* align-content: stretch; */
+  /* align-content: center; */
+  /* align-content: start; */
+  /* align-content: end; */
+}
+
+/* Mobile - For testing we are following desktop first. */
+@media (max-width: 40rem) {
+  .container {
+    grid-template-rows:
+      [hd-start] 5rem [hd-end row-2-start]
+      minmax(10px, 20rem) [row-2-end row-3-start]
+      150px [row-3-end row-4-start]
+      100px [row-4-end];
+
+    grid-template-areas:
+      "header header header header"
+      "main main main main"
+      "side side side side"
+      "footer footer footer footer ";
+  }
 }
 
 .el1 {
   background: rgba(255, 154, 72, 0.5);
-  grid-column: col-start 2 / col-end 2;
+  /* grid-column: col-start 2 / col-end 2; */
+  grid-area: side;
 }
 
 .el2 {
@@ -90,6 +138,18 @@ body {
 
   grid-area: main;
   z-index: 10;
+
+  /* Position elements individually on the x-axis */
+  /* justify-self: stretch; */
+  /* justify-self: center; */
+  /* justify-self: start; */
+  /* justify-self: end; */
+
+  /* Position elements individually on the y-axis */
+  /* align-self: stretch; */
+  /* align-self: center; */
+  /* align-self: start; */
+  /* align-self: end; */
 }
 
 .el3 {
