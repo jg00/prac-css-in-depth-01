@@ -1,0 +1,69 @@
+.container {
+  position: relative;
+  margin: 150px auto;
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+
+  /* Persepective property needs to be applied to the parent element.
+     Advantage is this perspective applies to all your child elements. */
+  perspective: 1000px;
+
+  /* perspective-origin: center; */
+  /* perspective-origin: right; */
+  perspective-origin: 500px; /* 500px to the right */
+
+  /* You can transform the container as well 
+     Positive values seem to make it rotate away */
+  /* transform: rotateY(10deg);  */
+  transform: rotateY(130deg);
+
+  /* Defines how nested elements are rendered in 3D space. 
+     flat - default
+     preserve-3d - Children maintain their position in 3D space. 
+  */
+  /* transform-style: flat; */
+  transform-style: preserve-3d;
+}
+
+.box1 {
+  position: absolute;
+  background: red;
+  width: 100%;
+  height: 100%;
+
+  /* transform: rotateX(130deg); */
+  /* transform: rotateY(30deg); */
+  /* transform: rotateX(0deg) rotateY(80deg); */
+
+  /* perspective() function will only apply to the specific element it is on. */
+  /* transform: perspective(1000px) rotateX(0deg) rotateY(80deg); */
+  /* transform: rotateX(30deg) rotateY(80deg) rotateZ(30deg); */
+
+  /* translate() */
+  transform: rotateY(80deg);
+
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+
+  z-index: 1; /* To see red box*/
+
+  /* Determines whether the backside of a transformed element is visible */
+  /* backface-visibility: hidden; */
+  backface-visibility: visible;
+}
+
+.box2 {
+  position: absolute;
+  background: blue;
+  width: 100%;
+  height: 100%;
+
+  /* translateZ - moves item front to back */
+  transform: translateZ(-10rem);
+
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
