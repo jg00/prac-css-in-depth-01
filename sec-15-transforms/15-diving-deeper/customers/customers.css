@@ -29,8 +29,8 @@ main {
 
   /* skewX - pulled top to the right along the x-axis */
   /* skewY - pulled left to the top along the y-axis */
-  /* transform: skew(20deg, 20deg); */
-  transform: skewX(20deg);
+  /* transform: skewX(20deg); */
+  transform: skew(20deg);
   overflow: hidden; /* Used to cut off the image outside of the skewed container. */
 }
 
@@ -39,7 +39,8 @@ main {
   vertical-align: top; /* Inline element bug - added to remove white space at bottom of image. */
   /* display: block; */ /* This also fixes the bug */
 
-  transform: skew(-20deg) scale(1.4);
+  /* transform: skew(-20deg) scaleX(1.4) scaleY(1.4); */
+  transform: skew(-20deg) scale(1.4); /* shorthand for above */
 }
 
 .testimonial__info {

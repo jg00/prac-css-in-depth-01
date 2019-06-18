@@ -76,7 +76,8 @@ main {
   /* z-index: 10; */
 
   /* Tranforms */
-  transform: rotateZ(45deg) translateX(3.5rem) translateY(-1rem);
+  /* transform: rotateZ(45deg) translateX(3.5rem) translateY(-1rem); */
+  transform: rotate(45deg) translate(3.5rem, -1rem); /* shorthand for above */
   /* transform-origin: center; */ /* same as 50% 50% */
   /* transform-origin: left top; */
   /* transform-origin: 100% 0%; */ /* right top corner*/
