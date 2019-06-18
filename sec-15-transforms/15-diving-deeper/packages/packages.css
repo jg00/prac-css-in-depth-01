@@ -37,7 +37,7 @@ main {
   margin: 1rem 0; /* 16px */
   border: 4px solid #0e4f1f;
   border-left: none;
-
+  overflow: hidden;
   position: relative; /* Added to implement .package__badge with a postion: absolute. */
   /* z-index: 1; */
 }
@@ -64,15 +64,31 @@ main {
   position: absolute;
   top: 0;
   right: 0;
-  margin: 1.25rem; /* 20px */
+  /* margin: 1.25rem; */ /* 20px */
+  margin: 0;
 
   font-size: 0.75rem; /* 12px */
   color: white;
   background: #ff5454;
   padding: 0.5rem; /* 8px */
-  border-radius: 6%;
+  /* border-radius: 6%; */
 
   /* z-index: 10; */
+
+  /* Tranforms */
+  transform: rotateZ(45deg) translateX(3.5rem) translateY(-1rem);
+  /* transform-origin: center; */ /* same as 50% 50% */
+  /* transform-origin: left top; */
+  /* transform-origin: 100% 0%; */ /* right top corner*/
+  transform-origin: center;
+
+  /*
+  translateX(1rem) - moves along the horizontal line (left to right) which is dependent on the rotation as well.
+  translateY(1rem) - moves along the vertical line (top to bottom) which is dependent on the rotation as well.
+  */
+
+  width: 12rem;
+  text-align: center;
 }
 
 .package__info {
