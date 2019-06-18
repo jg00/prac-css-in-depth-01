@@ -37,7 +37,7 @@ main {
   margin: 1rem 0; /* 16px */
   border: 4px solid #0e4f1f;
   border-left: none;
-  overflow: hidden;
+  overflow: hidden; /* Used to cut off the badge */
   position: relative; /* Added to implement .package__badge with a postion: absolute. */
   /* z-index: 1; */
 }
