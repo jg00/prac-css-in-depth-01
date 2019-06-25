@@ -18,7 +18,12 @@ for (let button of selectPlanButtons) {
     // backdrop.style.display = "block";
     // modal.className = 'open' // This approach will overwrite the complete class list
     modal.classList.add("open");
-    backdrop.classList.add("open");
+
+    /* For backdrop transition to work */
+    backdrop.style.display = "block";
+    setTimeout(() => {
+      backdrop.classList.add("open");
+    }, 10);
   });
 }
 
@@ -35,15 +40,25 @@ if (modalNoButton) {
 function closeModal() {
   // backdrop.style.display = "none";
   // modal.style.display = "none";
-  backdrop.classList.remove("open");
   if (modal) {
     modal.classList.remove("open");
   }
+
+  /* For backdrop transition to work */
+  backdrop.classList.remove("open");
+  setTimeout(() => {
+    backdrop.style.display = "none";
+  }, 200); /* Delay has to match .backdrop duration of transition of 0.2s (shared.css) */
 }
 
 toggleButton.addEventListener("click", function() {
   // mobileNav.style.display = "block";
   // backdrop.style.display = "block";
   mobileNav.classList.add("open");
-  backdrop.classList.add("open");
+
+  /* For backdrop transition to work */
+  backdrop.style.display = "block";
+  setTimeout(() => {
+    backdrop.classList.add("open");
+  }, 10);
 });

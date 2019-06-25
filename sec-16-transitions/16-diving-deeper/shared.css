@@ -43,7 +43,11 @@ main {
 /* Start of backdrop */
 .backdrop {
   position: fixed;
-  display: none;
+
+  display: none; /* Note that a change in display will not kick off any transitions */
+  opacity: 0;
+  transition: opacity 0.2s linear; /* Note that this sets backdrop to invisible but notice z-index:100 will make other elements not clickable. */
+
   top: 0;
   left: 0;
   z-index: 100;
@@ -187,7 +191,7 @@ Change to inline-block so child element <img> will respect '%' values. */
   background: white;
   border: none;
 }
-/* Start of header/side nav */
+/* End of header/side nav */
 
 /* End of main header - Link to home, nav sections * */
 
@@ -246,7 +250,10 @@ Change to inline-block so child element <img> will respect '%' values. */
 
 /* Start of side navigation */
 .mobile-nav {
-  display: none;
+  /* display: none; */
+  transform: translateX(-100%);
+  transition: transform 300ms ease-out;
+
   position: fixed;
   z-index: 101;
   top: 0;
