@@ -183,6 +183,15 @@ Change to inline-block so child element <img> will respect '%' values. */
   border-radius: 8px;
 }
 
+/* animation: name duration delay iterations direction(ie after one iteration what should happen) fill-mode(ie keep final result) or use play-state*/
+.main-nav__item--cta {
+  /* animation: wiggle 200ms 3s 8 alternate; */
+  /* animation: wiggle 200ms 3s 8 forwards; */ /* remove alternate to use 'forwards' - keeps last property values in last keyframe  */
+  /* animation: wiggle 200ms 3s 8 backwards; */ /* remove alternate to use 'backwards' - keeps set up at the starting state. */
+  /* animation: wiggle 200ms 3s 8 both; */
+  animation: wiggle 200ms 3s 8 none;
+}
+
 .main-nav__item--cta a:hover,
 .main-nav__item--cta a:active,
 .mobile-nav__item--cta a:hover,
@@ -334,5 +343,18 @@ Change to inline-block so child element <img> will respect '%' values. */
   .main-footer__links {
     flex-direction: row;
     justify-content: center;
+  }
+}
+
+/* Animation - simple from/to ie start/end */
+/* Note that there is no CSS selector here, just the property like 'tranform'.
+   The properties below will then be applied to any element which receives this set of keyframes
+   as an animation. */
+@keyframes wiggle {
+  from {
+    transform: rotateZ(-10deg);
+  }
+  to {
+    transform: rotateZ(10deg);
   }
 }
