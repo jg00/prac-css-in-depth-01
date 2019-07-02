@@ -34,6 +34,11 @@ main {
   overflow: hidden; /* Used to cut off the image outside of the skewed container. */
 }
 
+/* skew() gets removed because we overwrite the tranform property during our animation */
+#customer-1:hover .testimonial__image-container {
+  animation: flip-customer 1s ease-out forwards;
+}
+
 .testimonial__image {
   width: 100%;
   vertical-align: top; /* Inline element bug - added to remove white space at bottom of image. */
@@ -119,5 +124,17 @@ main {
     /* display: inline-block; */
     /* vertical-align: middle; */
     width: 30%;
+  }
+}
+
+@keyframes flip-customer {
+  0% {
+    tranform: rotateY(0) skew(20deg);
+  }
+  50% {
+    transform: rotateY(160deg) skew(20deg);
+  }
+  100% {
+    transform: rotateY(360deg) skew(20deg);
   }
 }
