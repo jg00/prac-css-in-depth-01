@@ -9,6 +9,7 @@
 }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -19,34 +20,30 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
-  padding-top: 3.5rem;
-}
 
-@supports (display: grid) {
-  body {
-    /* font-family: "Montserrat", sans-serif; */
-    /* margin: 0; */
+  /* Grid solution 2 - explicitly add a three row grid and explicitly assign our section elements accordingly. */
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 3.5rem auto fit-content(8rem);
+  grid-template-rows: 3.5rem auto fit-content(8rem);
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  /* padding-top: 3.5rem; */
+  height: 100%;
 
-    /* Grid solution 2 - explicitly add a three row grid and explicitly assign our section elements accordingly. */
-    display: grid;
-    grid-template-rows: 3.5rem auto fit-content(8rem);
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
-    padding-top: 0;
-    height: 100%;
-
-    /* Grid solution 1 - only main and footer have position of not 'static' (ie within document flow) therefore will be part of our grid.*/
-    /* display: grid;
+  /* Grid solution 1 - only main and footer have position of not 'static' (ie within document flow) therefore will be part of our grid.*/
+  /* display: grid;
   grid-template-rows: auto 8rem;
   padding-top: 3.5rem;
   height: 100%; */
-  }
 }
 
 /* Non-grid solution: main(100vh) - header(3.5rem) - footer(8rem) */
 main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   /* min-height: calc(100vh - 3.5rem - 8rem); */
   /* margin-top: 3.5rem; */
 
@@ -60,6 +57,8 @@ main {
 
   display: none; /* Note that a change in display will not kick off any transitions */
   opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear; /* Note that this sets backdrop to invisible but notice z-index:100 will make other elements not clickable. */
 
   top: 0;
@@ -92,9 +91,12 @@ main {
 
   display: -webkit-box;
   display: -ms-flexbox;
-  display: -moz-box;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -170,6 +172,10 @@ Change to inline-block so child element <img> will respect '%' values. */
   padding: 0;
   list-style: none;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
 }
 
@@ -207,6 +213,7 @@ Change to inline-block so child element <img> will respect '%' values. */
   /* animation: wiggle 200ms 3s 8 backwards; */ /* remove alternate to use 'backwards' - keeps set up at the starting state. */
   /* animation: wiggle 200ms 3s 8 both; */
   /* animation: wiggle 400ms 3s 8 none; */
+  -webkit-animation: wiggle 400ms 3s 8 ease-out none;
   animation: wiggle 400ms 3s 8 ease-out none;
 }
 
@@ -229,6 +236,8 @@ Change to inline-block so child element <img> will respect '%' values. */
   }
 
   .main-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; /* To display b/c was display: none for mobile initially. */
 
     /* display: inline-block;
@@ -240,6 +249,8 @@ Change to inline-block so child element <img> will respect '%' values. */
 
 /* Start of footer */
 .main-footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   background-color: black;
   padding: 2rem; /* 32px */
   margin-top: 3rem; /* 48px */
@@ -254,8 +265,17 @@ Change to inline-block so child element <img> will respect '%' values. */
   padding: 0;
   /* text-align: center; */
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -278,8 +298,14 @@ Change to inline-block so child element <img> will respect '%' values. */
 /* Start of side navigation */
 .mobile-nav {
   /* display: none; */
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
   transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  -o-transition: transform 300ms ease-out;
   transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
 
   position: fixed;
   z-index: 101;
@@ -298,9 +324,20 @@ Change to inline-block so child element <img> will respect '%' values. */
   padding: 0;
   /* text-align: center; */
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -347,6 +384,8 @@ Change to inline-block so child element <img> will respect '%' values. */
   display: block !important; /* To override specifity */
 
   opacity: 1 !important;
+  -webkit-transform: translateY(0) !important;
+  -ms-transform: translateY(0) !important;
   transform: translateY(0) !important;
 }
 /* End of shared button styles */
@@ -359,7 +398,12 @@ Change to inline-block so child element <img> will respect '%' values. */
   }
 
   .main-footer__links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
 }
@@ -378,14 +422,31 @@ Change to inline-block so child element <img> will respect '%' values. */
 } */
 
 /* Another version */
-@keyframes wiggle {
+@-webkit-keyframes wiggle {
   0% {
+    -webkit-transform: rotateZ(0);
     transform: rotateZ(0);
   }
   50% {
+    -webkit-transform: rotateZ(-10deg);
     transform: rotateZ(-10deg);
   }
   100% {
+    -webkit-transform: rotateZ(10deg);
+    transform: rotateZ(10deg);
+  }
+}
+@keyframes wiggle {
+  0% {
+    -webkit-transform: rotateZ(0);
+    transform: rotateZ(0);
+  }
+  50% {
+    -webkit-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(10deg);
     transform: rotateZ(10deg);
   }
 }
