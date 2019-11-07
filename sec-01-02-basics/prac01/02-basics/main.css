@@ -40,9 +40,9 @@ h1 {
 }
 
 /* Combinator has higher specificity */
-h1 {
+/* h1 {
   font-family: sans-serif;
-}
+} */
 
 /* Attribute selector */
 [disabled] {
