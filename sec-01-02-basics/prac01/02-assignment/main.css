@@ -1,0 +1,38 @@
+/* 4a */
+body {
+  font-family: sans-serif;
+}
+
+/* 1 */
+#assignment-instructions {
+  font-family: sans-serif;
+  color: orangered;
+}
+
+/* 4b */
+li {
+  font-family: inherit;
+}
+
+/* 5 */
+li ~ li {
+  background: black;
+  color: white;
+}
+
+/* 6 */
+ol li {
+  background: black;
+  color: lightslategray;
+}
+
+/* 2b, 3 */
+.li-code {
+  color: green;
+}
+
+/* 2a */
+code {
+  font-family: monospace;
+  color: red;
+}
