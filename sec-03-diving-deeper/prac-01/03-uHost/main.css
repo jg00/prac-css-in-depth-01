@@ -1,0 +1,50 @@
+/* Good place to store properties to be inherited and more efficient.  Inheritance has very low specificity. */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+#product-overview {
+  background: #ff1b68;
+  /* font-family: "Roboto", sans-serif; */
+}
+
+/* section h1:first-child {
+  background: blue;
+  color: pink;
+} */
+
+.section-title {
+  color: #2ddf5c;
+  /* font-family: inherit; */ /* Inherit from body because class has more specificity than h1 element below (ie give property more specificity) */
+}
+
+/* Browser settings used set for each font-family */
+h1 {
+  color: white;
+  /* font-family: serif; */ /* Times */
+  /* font-family: monospace; */ /* ie Fixed-width font (aka monospace font family) - Courier*/
+  /* font-family: sans-serif; */ /* Helvetica */
+
+  font-family: "Anton", sans-serif;
+}
+
+/* Overrides the first h1 selector font-family property.  Order matters but only for the same h1 selector. */
+/* h1 {
+  font-family: sans-serif;
+} */
+
+/* Combinator */
+#product-overview h1 {
+  color: white;
+  font-family: "Anton", sans-serif;
+}
+
+/* Combinator has higher specificity */
+/* h1 {
+  font-family: sans-serif;
+} */
+
+/* Attribute selector */
+[disabled] {
+  color: blueviolet;
+}
