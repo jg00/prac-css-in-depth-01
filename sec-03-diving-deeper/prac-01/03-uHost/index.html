@@ -13,54 +13,43 @@
     />
 
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
       href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
       rel="stylesheet"
     />
 
     <!-- Custom CSS files -->
     <link rel="stylesheet" href="./main.css" />
-
-    <!-- Document style -->
-    <!-- <style>
-      section {
-        background: lightskyblue;
-      }
-
-      section:nth-child(1) h1 {
-        background: #ff1b68;
-        color: green;
-      }
-    </style> -->
   </head>
 
   <body>
+    <header class="main-header">
+      <div>
+        <a href="index.html" class="main-header__brand">uHost</a>
+      </div>
+
+      <nav class="main-nav">
+        <ul class="main-nav__items">
+          <li class="main-nav__item">
+            <a href="packages/index.html">Packages</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="customers/index.html">Customers</a>
+          </li>
+          <li class="main-nav__item main-nav__item--cta">
+            <a href="start-hosting/index.html">Start Hosting</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
     <main>
       <section id="product-overview">
-        <div>
-          <h1>Get the freedom you deserve 1st</h1>
-        </div>
-
-        <!-- <h1>Get the freedom you deserve 2nd</h1> -->
-
-        <!-- Inline style -->
-        <!-- <h1 style="background:#ff1123; color:orange">
-          Get the freedom you deserve 3rd
-        </h1> -->
+        <h1>Get the freedom you deserve 1st</h1>
       </section>
-
       <section id="plans">
         <h1 class="section-title">Choose your plan</h1>
         <p>Make sure you get the most for your money!</p>
-        <!-- <h1>Choose your style 2nd</h1> -->
       </section>
-
-      <button disabled>Test Attribute Selector</button>
-      <button disabled>Test Attribute Selector 2</button>
     </main>
   </body>
 </html>

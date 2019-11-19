@@ -1,50 +1,91 @@
-/* Good place to store properties to be inherited and more efficient.  Inheritance has very low specificity. */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
+  margin: 0;
 }
 
 #product-overview {
-  background: #ff1b68;
-  /* font-family: "Roboto", sans-serif; */
+  background: url("./freedom.jpg");
+  width: 100%;
+  height: 528px;
+  padding: 10px;
 }
-
-/* section h1:first-child {
-  background: blue;
-  color: pink;
-} */
 
 .section-title {
   color: #2ddf5c;
-  /* font-family: inherit; */ /* Inherit from body because class has more specificity than h1 element below (ie give property more specificity) */
 }
 
-/* Browser settings used set for each font-family */
-h1 {
-  color: white;
-  /* font-family: serif; */ /* Times */
-  /* font-family: monospace; */ /* ie Fixed-width font (aka monospace font family) - Courier*/
-  /* font-family: sans-serif; */ /* Helvetica */
-
-  font-family: "Anton", sans-serif;
-}
-
-/* Overrides the first h1 selector font-family property.  Order matters but only for the same h1 selector. */
-/* h1 {
-  font-family: sans-serif;
-} */
-
-/* Combinator */
 #product-overview h1 {
   color: white;
   font-family: "Anton", sans-serif;
 }
 
-/* Combinator has higher specificity */
-/* h1 {
-  font-family: sans-serif;
-} */
-
-/* Attribute selector */
-[disabled] {
-  color: blueviolet;
+/* Navigator - start */
+.main-header {
+  background: #2ddf5c;
+  width: 100%;
+  padding: 8px 16px;
+  /* vertical-align: middle; */
 }
+
+.main-header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.main-header__brand {
+  color: #0e4f1f;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.main-nav {
+  display: inline-block;
+  width: calc(100% - 74px);
+  text-align: right;
+  vertical-align: middle;
+}
+
+.main-nav__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav__item {
+  display: inline-block;
+  margin: 0 16px;
+}
+
+.main-nav__item a {
+  text-decoration: none;
+  color: #0e4f1f;
+  font-weight: bold;
+  padding: 3px 0;
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
+  color: white;
+  border-bottom: 5px solid white;
+}
+
+.main-nav__item--cta a {
+  color: white;
+  background: #ff1b68;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active {
+  color: #ff1b68;
+  background: white;
+  border: none;
+}
+
+/* Navigator - end */
