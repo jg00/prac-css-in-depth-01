@@ -36,6 +36,6 @@ a#someId {
   padding: 16px;
 }
 
-.highlighted {
-  border: 2px solid #fa923f;
+section.highlighted {
+  border: 2px dotted #fa923f;
 }
