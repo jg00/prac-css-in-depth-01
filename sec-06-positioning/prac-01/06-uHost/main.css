@@ -16,9 +16,9 @@
 }
 
 .plan__list {
+  text-align: center;
   width: 80%;
   margin: auto;
-  text-align: center;
 }
 
 /* Plan Card - start */
