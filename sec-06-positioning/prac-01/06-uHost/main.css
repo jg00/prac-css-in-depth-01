@@ -5,6 +5,7 @@
   padding: 10px;
 }
 
+/* Plan Card Container - start */
 .section-title {
   color: #2ddf5c;
   text-align: center;
@@ -16,10 +17,12 @@
 }
 
 .plan__list {
-  text-align: center;
+  /* div */
+  text-align: center; /* The three plans are inline-block.  To center we add text-align: center to fix. */
   width: 80%;
   margin: auto;
 }
+/* Plan Card Container - end */
 
 /* Plan Card - start */
 .plan {
@@ -71,7 +74,6 @@
 .plan--highlighted .plan__price {
   color: #0e4f1f;
 }
-
 /* Plan Card - end */
 
 /* Key Features - start */

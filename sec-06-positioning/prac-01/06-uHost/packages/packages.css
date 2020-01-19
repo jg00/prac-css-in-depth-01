@@ -18,7 +18,7 @@ main {
 
 .package a {
   text-decoration: none;
-  color: inherit;
+  color: inherit; /* Use your page default */
   display: block;
   padding: 32px;
 }
@@ -45,7 +45,7 @@ main {
 
 #free {
   background: rgba(234, 252, 237, 0.95);
-  float: right;
+  float: right; /* Takes element out of document flow */
   border-right: none;
   border-left: 4px solid #0e4f1f;
   text-align: right;
