@@ -1,0 +1,40 @@
+#plus {
+  margin-top: 48px;
+}
+
+#premium {
+  background: #0e4f1f;
+}
+
+#premium .plan__type {
+  color: #ccc;
+}
+
+.plan {
+  background: #d5ffdc;
+  border-top: 3px solid #0e4f1f;
+  border-right: 3px solid #0e4f1f;
+  border-bottom: 3px solid #0e4f1f;
+  padding: 32px;
+  margin: 16px 0;
+  width: 80%;
+}
+
+.plan a {
+  text-decoration: none;
+}
+
+.plan__type {
+  color: black;
+}
+
+.plan__level {
+  color: #858585;
+}
+
+.plan__description {
+  color: #0e4f1f;
+  border: 1px solid #0e4f1f;
+  background: white;
+  padding: 16px;
+}
