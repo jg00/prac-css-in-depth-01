@@ -1,0 +1,215 @@
+#product-overview {
+  background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
+    url("./images//freedom.jpg") left 10% bottom 70% / cover no-repeat
+      border-box border-box,
+    #ff1b68;
+
+  /* background: url("./images//freedom.jpg") left 10% bottom 20% / cover no-repeat
+    border-box border-box; */
+  /* I P/S R O C */
+
+  /* background: url("./freedom.jpg"); */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+
+  /* background-position: left 10% bottom 20%;  or left top or left 0% top 0% or center is same as left 50% top 50%*/
+  /* background-origin: border-box; */ /* padding-box is default.  border-box define our container for our image to include the border.  Watch our for image 'excess' on top and bottom and left and right for shorter width. */
+  /* background-clip: border-box; */
+
+  /* background-attachment: scroll; Not usually used*/
+
+  /* Gradients both linear and radial are treated as images */
+  /* background-image: linear-gradient(to bottom, red 70%, blue 85%); */
+  /* background-image: radial-gradient(red, blue, green); */
+
+  width: 100vw;
+  height: 33vh;
+  margin-top: 2.6rem;
+  /* padding: 10px; */
+
+  /* border: 20px dotted rgba(200, 0, 0, 1); */
+
+  position: relative;
+}
+
+#product-overview h1 {
+  color: white;
+  font-family: "Anton", sans-serif;
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
+
+  /* width: 100%; */
+}
+
+/* Plan Card Container - start */
+.section-title {
+  color: #2ddf5c;
+  text-align: center;
+}
+
+#product-overview h1 {
+  color: white;
+  font-family: "Anton", sans-serif;
+}
+
+.plan__list {
+  /* div */
+  text-align: center; /* The three plans are inline-block.  To center we add text-align: center to fix. */
+  width: 80%;
+  margin: auto;
+}
+/* Plan Card Container - end */
+
+/* Plan Card - start */
+.plan {
+  background: #d5ffdc;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  display: inline-block;
+  width: 30%;
+  vertical-align: middle;
+}
+
+.plan--highlighted {
+  background: #19b84c;
+  color: white;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.plan__annotation {
+  background: white;
+  color: #19b84c;
+  padding: 0.5rem;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.plan__title {
+  color: #0e4f1f;
+}
+
+.plan__price {
+  color: #858585;
+}
+
+.plan__features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.plan__feature {
+  margin: 0.5rem 0;
+}
+
+.plan--highlighted .plan__title {
+  color: white;
+}
+
+.plan--highlighted .plan__price {
+  color: #0e4f1f;
+}
+/* Plan Card - end */
+
+/* Key Features - start */
+#key-features {
+  background: #ff1b68;
+  margin-top: 5rem;
+  padding: 1rem;
+}
+
+#key-features .section-title {
+  color: white;
+  margin: 2rem;
+}
+
+.key-feature__list {
+  /* ul */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.key-feature {
+  /* li */
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+}
+
+.key-feature__image {
+  background: #ffcede;
+  width: 128px;
+  height: 128px;
+  border: 2px solid #424242;
+  border-radius: 50%;
+  margin: auto;
+  padding: 1.5rem;
+
+  /* border: 5px dotted blue; */
+}
+
+.key-feature__description {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  font-size: 1.3rem;
+}
+
+/* Key Features - end */
+
+/* Choose your plan - modal - start */
+.modal {
+  position: fixed;
+  display: none;
+  z-index: 200;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.modal__title {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.modal__actions {
+  text-align: center;
+}
+
+/* A link make to look like a button and standard button. */
+.modal__action {
+  border: 1px solid #0e4f1f;
+  background: #0e4f1f;
+  text-decoration: none;
+  color: white;
+  font: inherit;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.modal__action:hover,
+.modal__action:active {
+  background: #2ddf5c;
+  border-color: #2ddf5c;
+}
+
+.modal__action--negative {
+  background: red;
+  border-color: red;
+}
+
+.modal__action--negative:hover,
+.modal__action--negative:active {
+  background: #ff5454;
+  border-color: #ff5454;
+}
+
+/* Choose your plan - modal - end */
