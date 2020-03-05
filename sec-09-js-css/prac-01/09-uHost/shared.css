@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+
+/* html { */
+/* height: 100%; */
+/* font-size: 75%; 75% of browser settings.  Possible but usually not used. */
+/* } */
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  /* height: 100%; */
+}
+
+/* Example to show if the element has position: relative, we would need to set the body and html height: 100% also.  Otherwise just make position: absolute. */
+.backdrop {
+  /* position: relative; static will not allow us to add a z-index.  */
+  position: fixed; /* With position: fixed no need to set the body and html height: 100%   postion: absolute is dependent of parent element of position: relative.*/
+  display: none;
+  top: 0;
+  left: 0;
+
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Navigator - start */
+.main-header {
+  background: #2ddf5c;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  /* vertical-align: middle; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.main-header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.main-header__brand {
+  color: #0e4f1f;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+
+  height: 1.4rem;
+
+  /* Important setting to control image size as a content */
+  display: inline-block;
+}
+
+.main-header__brand img {
+  height: 100%;
+}
+
+.main-nav {
+  display: inline-block;
+  width: calc(100% - 74px);
+  text-align: right;
+  vertical-align: middle;
+}
+
+.main-nav__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav__item {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.main-nav__item a {
+  text-decoration: none;
+  color: #0e4f1f;
+  font-weight: bold;
+  padding: 0.2rem 0;
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
+  color: white;
+  border-bottom: 5px solid white;
+}
+
+.main-nav__item--cta a {
+  color: white;
+  background: #ff1b68;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active {
+  color: #ff1b68;
+  background: white;
+  border: none;
+}
+
+/* Navigator - end */
+
+/* Footer - start */
+.main-footer {
+  background: black;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.main-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.main-footer__link {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.main-footer__link a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-footer__link a:hover,
+.main-footer__link a:active {
+  color: #ccc;
+}
+
+/* Footer - end */
+
+/* Button - start */
+.button {
+  background: #0e4f1f;
+  color: white;
+  font: inherit;
+  border: 1.5px solid #0e4f1f;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:active {
+  background: white;
+  color: #0e4f1f;
+}
+
+.button:focus {
+  outline: none;
+}
+/* Button - end */
