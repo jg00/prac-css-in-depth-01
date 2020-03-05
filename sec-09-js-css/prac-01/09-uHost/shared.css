@@ -44,6 +44,30 @@ body {
   vertical-align: middle;
 }
 
+/* Hamburger button - start */
+.toggle-button {
+  width: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button__bar {
+  width: 100%;
+  height: 0.2rem;
+  background: black;
+  display: block;
+  margin: 0.6rem 0;
+}
+/* Hamburger button - end */
+
 .main-header__brand {
   color: #0e4f1f;
   text-decoration: none;
@@ -54,6 +78,7 @@ body {
 
   /* Important setting to control image size as a content */
   display: inline-block;
+  vertical-align: middle;
 }
 
 .main-header__brand img {
@@ -62,7 +87,7 @@ body {
 
 .main-nav {
   display: inline-block;
-  width: calc(100% - 74px);
+  width: calc(100% - 122px);
   text-align: right;
   vertical-align: middle;
 }
@@ -78,7 +103,8 @@ body {
   margin: 0 1rem;
 }
 
-.main-nav__item a {
+.main-nav__item a,
+.mobile-nav__item a {
   text-decoration: none;
   color: #0e4f1f;
   font-weight: bold;
@@ -91,7 +117,8 @@ body {
   border-bottom: 5px solid white;
 }
 
-.main-nav__item--cta a {
+.main-nav__item--cta a,
+.mobile-nav__item--cta a {
   color: white;
   background: #ff1b68;
   padding: 0.5rem 1rem;
@@ -99,13 +126,47 @@ body {
 }
 
 .main-nav__item--cta a:hover,
-.main-nav__item--cta a:active {
+.main-nav__item--cta a:active,
+.mobile-nav__item--cta a:hover,
+.mobile-nav__item--cta a:active {
   color: #ff1b68;
   background: white;
   border: none;
 }
 
 /* Navigator - end */
+
+/* Side Navigator - start */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 80%;
+  height: 100vh;
+}
+
+/* ul */
+.mobile-nav__items {
+  width: 90%;
+  height: 100%;
+  list-style: none;
+  margin: 10% auto;
+  padding: 0;
+  text-align: center;
+}
+
+/* li */
+.mobile-nav__item {
+  margin: 1rem 0;
+}
+
+.mobile-nav__item a {
+  font-size: 1.5rem;
+}
+/* Side Navigator - end */
 
 /* Footer - start */
 .main-footer {
@@ -160,3 +221,9 @@ body {
   outline: none;
 }
 /* Button - end */
+
+/* Add/Remove to element's CSS classList to toggle */
+/* !important only added to take priority because this get's overwritten in main.css > .modal because main.css is set up in index.html after shared.css. */
+.open {
+  display: block !important;
+}
