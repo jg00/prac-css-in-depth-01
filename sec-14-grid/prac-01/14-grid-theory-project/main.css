@@ -10,7 +10,11 @@
 
   /* grid-template-rows: 5rem 2rem; */
   /* grid-template-rows: 5rem auto; */
-  grid-template-rows: 5rem minmax(10px, auto) 100px;
+
+  /* grid-template-rows: 5rem minmax(10px, auto) 100px; */
+  grid-template-rows:
+    [row-1-start] 5rem [row-1-end row-2-start]minmax(10px, auto)
+    [row-2-end row-3-start] 100px [row-3-end];
 }
 
 .el1 {
@@ -21,7 +25,13 @@
   background: rgba(255, 0, 0, 0.5);
   grid-column-start: 1;
   grid-column-end: -1;
-  grid-row-start: 2;
+
+  /* Default behavior is for element to look to fill space to the right and then down unless we explicitly specify position.
+     Watch our for overlap behavior.
+     Watch out for order of elements on the DOM when overlapping occurs.
+  */
+  /* grid-row-start: 2; */
+  grid-row-start: row-2-start;
   grid-row-end: span 1;
   z-index: 10;
 }
@@ -30,8 +40,11 @@
   background: rgba(0, 128, 0, 0.5);
   grid-column-start: 2;
   grid-column-end: span 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
+
+  /* grid-row-start: 1; */
+  /* grid-row-end: 3; */
+  grid-row-start: row-1-start;
+  grid-row-end: row-2-end;
 }
 
 .el4 {
