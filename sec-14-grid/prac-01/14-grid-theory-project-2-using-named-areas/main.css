@@ -22,6 +22,23 @@
   /* grid-gap: row column */
   /* grid-gap: 10px 20px; */
   grid-gap: 10px; /* all around */
+
+  /* Named template areas
+      1 You still need to define 
+          grid-template-columns
+          grid-template-rows
+      2 You define your named template areas
+          grid-template-areas 
+      3 Now for child grid elements you give them a name you also use in your named template areas
+          grid-area
+          - grid-area can be used for shorthand when using grid lines
+          - now we use grid-area to provide a name
+  */
+
+  grid-template-areas:
+    "header header header header"
+    ".      .      main   main  "
+    "footer footer footer footer";
 }
 
 .el1 {
@@ -34,7 +51,7 @@
   /* shorthand */
   /* grid-column-start: 1; */
   /* grid-column-end: -1; */
-  grid-column: 1 / -1;
+  /* grid-column: 1 / -1; */
 
   /* Default behavior is for element to look to fill space to the right and then down unless we explicitly specify position.
      Watch our for overlap behavior.
@@ -43,7 +60,12 @@
   /* grid-row-start: 2; */
   /* grid-row-start: row-2-start; */
   /* grid-row-end: span 1; */
-  grid-row: row-2-start / span 1;
+  /* grid-row: row-2-start / span 1; */
+
+  /* Replaced above with named element area */
+  /* grid-column: 1 / -1; */
+  /* grid-row: row-2-start / span 1; */
+  grid-area: main;
 
   z-index: 10;
 }
@@ -59,9 +81,20 @@
   /* grid-row-end: row-2-end; */
 
   /* Shorthand for all properties - grid-area: rowstart / columnstart / rowend / columnend */
-  grid-area: row-1-start / 2 / row-2-end / span 3;
+  /* grid-area: row-1-start / 2 / row-2-end / span 3; */
+
+  /* Instead of specifying the shorthand and using lines to define the element position we provide a named area.
+     Having this property without the grid-template-areas in the .container breaks the grid layout 
+  */
+  grid-area: header;
 }
 
 .el4 {
   background: rgba(0, 4, 255, 0.5);
+
+  /* Example of forcing overlap by explicitly defining rows and columns for element position. */
+  /* grid-column: 2 / -1; */
+  /* grid-row: 2 / span 1; */
+
+  grid-area: footer;
 }
