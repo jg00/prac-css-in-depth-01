@@ -1,7 +1,8 @@
 .container {
   margin-top: 20px;
   display: grid;
-  height: 500px;
+  height: 800px;
+  width: 800px;
   /* grid-template-columns: 200px 150px 20%; */
   /* grid-template-columns: 200px 150px 20% 1fr; */
   /* grid-template-columns: 200px 2fr 20% 1fr; */
@@ -9,7 +10,7 @@
 
   /* Replace with line names but reference in the element (ex: el1) with auto-generated line occurrence numbers. */
   /* grid-template-columns: repeat(4, 25%); */
-  grid-template-columns: [hd-start] repeat(4, [col-start] 25% [col-end]) [hd-end];
+  grid-template-columns: [hd-start] repeat(4, [col-start] 20% [col-end]) [hd-end];
 
   /* grid-template-rows: 5rem 2rem; */
   /* grid-template-rows: 5rem auto; */
@@ -17,7 +18,8 @@
   /* grid-template-rows: 5rem minmax(10px, auto) 100px; */
   grid-template-rows:
     /* [row-1-start] 5rem [row-1-end row-2-start]minmax(10px, auto) */
-    [hd-start] 5rem [hd-end row-2-start]minmax(10px, auto)
+    /* [hd-start] 5rem [hd-end row-2-start]minmax(10px, auto) */
+    [hd-start] 5rem [hd-end row-2-start]minmax(10px, 20rem)
     [row-2-end row-3-start] 100px [row-3-end];
 
   /* Gaps (gutters) used instead of margins */
@@ -43,6 +45,17 @@
     "header header header header"
     ".      .      main   main  "
     "footer footer footer footer";
+
+  /* Grid element positioning */
+  /* justify-items: center; */
+  justify-items: stretch;
+  align-items: stretch;
+
+  /* Positioning of entire grid content within the given width and height. (This is not moving the grid using absolute or fixed position. */
+  justify-content: center;
+  align-content: end;
+
+  border: 5px dashed green;
 }
 
 .el1 {
@@ -74,8 +87,11 @@
   /* grid-column: 1 / -1; */
   /* grid-row: row-2-start / span 1; */
   grid-area: main;
-
   z-index: 10;
+
+  /* Specific element positioning */
+  justify-self: center;
+  align-self: center;
 }
 
 .el3 {
