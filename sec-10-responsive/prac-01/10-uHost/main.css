@@ -169,15 +169,15 @@
   text-align: center;
 }
 
-.key-feature {
-  /* li */
-  /* display: inline-block; */
-  /* width: 30%; */
-  /* vertical-align: top; */
+/* .key-feature { */
+/* li */
+/* display: inline-block; */
+/* width: 30%; */
+/* vertical-align: top; */
 
-  /* Mobile */
-  /* width: 100%; */
-}
+/* Mobile */
+/* width: 100%; */
+/* } */
 
 @media (min-width: 40rem) {
   .key-feature {
