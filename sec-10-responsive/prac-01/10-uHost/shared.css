@@ -72,9 +72,9 @@ body {
   color: #0e4f1f;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 
-  height: 1.4rem;
+  /* height: 1.5rem; */
 
   /* Important setting to control image size as a content */
   display: inline-block;
@@ -82,14 +82,19 @@ body {
 }
 
 .main-header__brand img {
-  height: 100%;
+  /* height: 100%; */
+  height: 2.5rem; /* Make image bigger */
 }
 
 .main-nav {
-  display: inline-block;
-  width: calc(100% - 122px);
-  text-align: right;
-  vertical-align: middle;
+  /* display: inline-block; */
+  /* width: calc(100% - 122px); */
+  /* width: calc(100% - 44px); */
+  /* text-align: right; */
+  /* vertical-align: middle; */
+
+  /* Mobile */
+  display: none;
 }
 
 .main-nav__items {
@@ -168,6 +173,25 @@ body {
 }
 /* Side Navigator - end */
 
+/*
+  >= 40rem
+  - hide toggle button
+  - display main nav div that contain the nav links
+*/
+@media (min-width: 40rem) {
+  .toggle-button {
+    display: none;
+  }
+
+  .main-nav {
+    display: inline-block;
+    /* width: calc(100% - 122px); */
+    width: calc(100% - 44px);
+    text-align: right;
+    vertical-align: middle;
+  }
+}
+
 /* Footer - start */
 .main-footer {
   background: black;
@@ -183,8 +207,12 @@ body {
 }
 
 .main-footer__link {
-  display: inline-block;
-  margin: 0 1rem;
+  /* display: inline-block; */
+  /* margin: 0 1rem; */
+
+  /* Mobile */
+  display: block;
+  margin: 1rem 0;
 }
 
 .main-footer__link a {
@@ -196,8 +224,14 @@ body {
 .main-footer__link a:active {
   color: #ccc;
 }
-
 /* Footer - end */
+
+@media (min-width: 40rem) {
+  .main-footer__link {
+    display: inline-block;
+    margin: 0 1rem;
+  }
+}
 
 /* Button - start */
 .button {

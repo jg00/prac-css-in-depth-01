@@ -1,8 +1,12 @@
 #product-overview {
   background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
+    url("./images/freedom.jpg") center / cover no-repeat border-box border-box,
+    #ff1b68;
+
+  /* background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
     url("./images//freedom.jpg") left 10% bottom 70% / cover no-repeat
       border-box border-box,
-    #ff1b68;
+    #ff1b68; */
 
   /* background: url("./images//freedom.jpg") left 10% bottom 20% / cover no-repeat
     border-box border-box; */
@@ -22,10 +26,11 @@
   /* background-image: linear-gradient(to bottom, red 70%, blue 85%); */
   /* background-image: radial-gradient(red, blue, green); */
 
-  width: 100vw;
+  /* width: 100vw; Commented for now to fix issue of extra margin to the right */
+  /* width: 100vw; */
   height: 33vh;
   margin-top: 2.6rem;
-  /* padding: 10px; */
+  /* padding: 0; */
 
   /* border: 20px dotted rgba(200, 0, 0, 1); */
 
@@ -38,8 +43,23 @@
   position: absolute;
   bottom: 5%;
   left: 3%;
+  font-size: 1.6rem;
 
   /* width: 100%; */
+}
+
+/* After Mobile. >= 40rem (640px) */
+@media (min-width: 40rem) {
+  /* Update background image */
+  #product-overview {
+    height: 40vh;
+    /* background-position: center; */
+    background-position: 50% 25%;
+  }
+
+  #product-overview h1 {
+    font-size: 3rem;
+  }
 }
 
 /* Plan Card Container - start */
@@ -53,12 +73,6 @@
   font-family: "Anton", sans-serif;
 }
 
-.plan__list {
-  /* div */
-  text-align: center; /* The three plans are inline-block.  To center we add text-align: center to fix. */
-  width: 80%;
-  margin: auto;
-}
 /* Plan Card Container - end */
 
 /* Plan Card - start */
@@ -66,16 +80,17 @@
   background: #d5ffdc;
   text-align: center;
   padding: 1rem;
-  margin: 0.5rem;
-  display: inline-block;
-  width: 30%;
-  vertical-align: middle;
+  margin: 0.5rem 0;
+  /* display: inline-block; */
+  /* width: 30%; */
+  width: 100%;
+  /* vertical-align: middle; */
 }
 
 .plan--highlighted {
   background: #19b84c;
   color: white;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); */
 }
 
 .plan__annotation {
@@ -113,6 +128,27 @@
 }
 /* Plan Card - end */
 
+@media (min-width: 40rem) {
+  .plan__list {
+    /* div */
+    width: 100%;
+    text-align: center; /* The three plans are inline-block.  To center we add text-align: center to fix. */
+    /* margin: auto; */
+  }
+
+  .plan {
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+    min-width: 12.8rem; /* 204.8px */
+    max-width: 25rem; /* 400px */
+  }
+
+  .plan--highlighted {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
 /* Key Features - start */
 #key-features {
   background: #ff1b68;
@@ -135,9 +171,22 @@
 
 .key-feature {
   /* li */
-  display: inline-block;
-  width: 30%;
-  vertical-align: top;
+  /* display: inline-block; */
+  /* width: 30%; */
+  /* vertical-align: top; */
+
+  /* Mobile */
+  /* width: 100%; */
+}
+
+@media (min-width: 40rem) {
+  .key-feature {
+    /* li */
+    display: inline-block;
+    width: 30%;
+    max-width: 25rem; /* we matched alignment with above plans */
+    vertical-align: top;
+  }
 }
 
 .key-feature__image {
