@@ -29,7 +29,8 @@
   /* width: 100vw; Commented for now to fix issue of extra margin to the right */
   /* width: 100vw; */
   height: 33vh;
-  margin-top: 2.6rem;
+  /* margin-top: 2.6rem; */
+  /* margin-top: 3.5rem; Replaced on shared.css <main> */ /* 2.5rem height of icon + 2 * 0.5rem padding for the navbar = 3.5rem total navbar height. */
   /* padding: 0; */
 
   /* border: 20px dotted rgba(200, 0, 0, 1); */
@@ -49,7 +50,10 @@
 }
 
 /* After Mobile. >= 40rem (640px) */
-@media (min-width: 40rem) {
+/* @media (min-width: 40rem) and (orientation: portrait) { */
+/* @media (min-width: 40rem), (orientation: portrait) { */
+/* @media (min-width: 40rem), (min-height: 60rem) { */
+@media (min-width: 40rem) and (min-height: 40rem) {
   /* Update background image */
   #product-overview {
     height: 40vh;
