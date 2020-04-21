@@ -265,6 +265,14 @@ main {
 .button:focus {
   outline: none;
 }
+
+.button[disabled] {
+  cursor: not-allowed;
+  border: rgb(128, 111, 111);
+  background: #ccc;
+  color: rgb(128, 111, 111);
+}
+
 /* Button - end */
 
 /* Add/Remove to element's CSS classList to toggle */
