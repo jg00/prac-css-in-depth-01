@@ -8,15 +8,26 @@
   box-sizing: border-box;
 }
 
-/* html { */
-/* height: 100%; */
-/* font-size: 75%; 75% of browser settings.  Possible but usually not used. */
-/* } */
+html {
+  height: 100%;
+  /* font-size: 75%; 75% of browser settings.  Possible but usually not used. */
+}
 
 body {
   font-family: "Montserrat", sans-serif; /* Web font from Google Fonts */
   margin: 0;
   /* height: 100%; */
+
+  display: grid;
+
+  grid-template-rows: 3.5rem auto fit-content(8rem);
+  /* padding-top: 3.5rem; */
+  height: 100%;
+
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
 }
 
 /* 
@@ -25,8 +36,10 @@ body {
   Then push down with margin-top: 3.5rem;
 */
 main {
-  min-height: calc(100vh - 3.5rem - 8rem);
-  margin-top: 3.5rem;
+  /* min-height: calc(100vh - 3.5rem - 8rem); */
+  /* margin-top: 3.5rem; */
+  /* grid-row: 2 / 3; */
+  grid-area: main;
 }
 
 /* Example to show if the element has position: relative, we would need to set the body and html height: 100% also.  Otherwise just make position: absolute. */
@@ -228,6 +241,9 @@ main {
   background: black;
   padding: 2rem;
   margin-top: 3rem;
+
+  /* grid-row: 3 / 4; */
+  grid-area: footer;
 }
 
 .main-footer__links {
