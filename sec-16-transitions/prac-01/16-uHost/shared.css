@@ -46,11 +46,19 @@ main {
 .backdrop {
   /* position: relative; static will not allow us to add a z-index.  */
   position: fixed; /* With position: fixed no need to set the body and html height: 100%   postion: absolute is dependent of parent element of position: relative.*/
-  display: none;
   top: 0;
   left: 0;
 
+  /* Special behavior - Remember that changing display value from "none" to "something else" (and vice versa) from element will cause transitions to be ignored. */
+  /* You need hacky solution in JS where you set display property. */
+  display: none;
+  /* Remember we can apply transitions to opacity but not display property. */
+  opacity: 0; /* Issue is it is displayed but just transparent. */
+
+  transition: opacity 2s linear;
+
   z-index: 100;
+
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
@@ -324,4 +332,7 @@ main {
 /* !important only added to take priority because this get's overwritten in main.css > .modal because main.css is set up in index.html after shared.css. */
 .open {
   display: block !important;
+
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
