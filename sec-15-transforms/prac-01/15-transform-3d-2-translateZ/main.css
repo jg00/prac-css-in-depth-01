@@ -1,0 +1,55 @@
+.container {
+  position: relative;
+  margin: 150px auto;
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+
+  perspective: 1000px; /* Usually placed on container */
+  perspective-origin: 500px;
+
+  transform: rotateY(130deg);
+  transform-style: preserve-3d; /* flat */
+}
+
+.box1 {
+  position: absolute;
+  background: red;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  z-index: 1;
+
+  /* transform: perspective(1000px) rotateX(0deg) rotateY(80deg);  Perspective() function or property applied at container */
+  transform: rotateY(80deg);
+  backface-visibility: visible;
+}
+
+.box2 {
+  position: absolute;
+  background: blue;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+
+  transform: translateZ(-10rem);
+}
+
+/* .box-middle { */
+/* border: 1px solid lightblue; */
+/* background: white; */
+/* border-radius: 50%; */
+/* width: 1rem; */
+/* height: 1rem; */
+
+/* position: absolute; */
+/* top: 50%; */
+/* left: 50%; */
+
+/* transform: rotateX(30deg) rotateY(80deg) rotateZ(30deg) translate(-50%, -50%); */
+/* transform: translate(-50%, -50%); */
+/* } */
