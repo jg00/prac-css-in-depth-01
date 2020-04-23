@@ -55,7 +55,7 @@ main {
   /* Remember we can apply transitions to opacity but not display property. */
   opacity: 0; /* Issue is it is displayed but just transparent. */
 
-  transition: opacity 2s linear;
+  transition: opacity 400ms linear;
 
   z-index: 100;
 
@@ -168,6 +168,12 @@ main {
   border-bottom: 5px solid white;
 }
 
+/* Animate cta */
+.main-nav__item--cta {
+  /* animation: wiggle 200ms 3s 8 alternate; */
+  animation: wiggle 400ms 3s 8 ease-out none; /* none, forwards, backwards */
+}
+
 .main-nav__item--cta a,
 .mobile-nav__item--cta a {
   color: white;
@@ -189,7 +195,12 @@ main {
 
 /* Side Navigator - start */
 .mobile-nav {
-  display: none;
+  /* display: none; */
+
+  /* opacity: 1; */
+  transform: translateX(-100%);
+  transition: transform 400ms ease-in;
+
   position: fixed;
   z-index: 101;
   top: 0;
@@ -335,4 +346,29 @@ main {
 
   opacity: 1 !important;
   transform: translateY(0) !important;
+}
+
+/* KeyFrames - Animate cta*/
+/* @keyframes wiggle {
+  from {
+    transform: rotateZ(0);
+  }
+
+  to {
+    transform: rotateZ(10deg);
+  }
+} */
+
+@keyframes wiggle {
+  0% {
+    transform: rotateZ(0) scale(0);
+  }
+
+  50% {
+    transform: rotateZ(-10deg) scale(0.5);
+  }
+
+  100% {
+    transform: rotateZ(10deg) scale(2);
+  }
 }

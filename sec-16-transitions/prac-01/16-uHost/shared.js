@@ -9,6 +9,9 @@ const mobileNav = document.querySelector(".mobile-nav");
 
 const selectPlanButtons = document.querySelectorAll(".plan button");
 
+// Main nav cta
+const ctaButton = document.querySelector(".main-nav__item--cta");
+
 // console.dir(backdrop);
 
 function closeModal() {
@@ -20,7 +23,7 @@ function closeModal() {
   backdrop.classList.remove("open");
   setTimeout(function () {
     backdrop.style.display = "none"; // For hacky solution to get opacity transition not be ignored.
-  }, 2000);
+  }, 400);
 }
 
 // Register button event listeners
@@ -43,7 +46,7 @@ backdrop.addEventListener("click", function () {
   backdrop.classList.remove("open");
   setTimeout(function () {
     backdrop.style.display = "none"; // For hacky solution to get opacity transition not be ignored.
-  }, 2000);
+  }, 400);
 
   // mobileNav.style.display = "none";
   mobileNav.classList.remove("open");
@@ -65,4 +68,17 @@ toggleButton.addEventListener("click", (e) => {
   setTimeout(function () {
     backdrop.classList.add("open");
   }, 10);
+});
+
+/* Event listener for cta button */
+ctaButton.addEventListener("animationstart", function (event) {
+  console.log("Animation started", event);
+});
+
+ctaButton.addEventListener("animationend", function (event) {
+  console.log("Animation ended", event);
+});
+
+ctaButton.addEventListener("animationiteration", function (event) {
+  console.log("Animation iteration", event);
 });
