@@ -20,8 +20,8 @@ main {
 
 /* div */
 .testimonial__image-container {
-  /* width: 65%; */
-  width: 100%;
+  width: 60%;
+  /* width: 100%; */
 
   /* max-width: 580px; */
   max-width: 40rem;
@@ -30,12 +30,17 @@ main {
   box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.3);
 
   /* border: 1px dotted green; */
+
+  transform: skew(20deg);
+  overflow: hidden;
 }
 
 .testimonial__image {
   width: 100%;
   vertical-align: top;
   /* display: block; Also works to remove line below image issue with "inline" element bug. */
+
+  transform: skew(-20deg) scale(1.4);
 }
 
 /* div */
