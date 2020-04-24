@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
@@ -9,8 +11,8 @@
   --highlight-color: #ff1b68;
 }
 
-/* Reset settings manually using universal selector */
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -19,26 +21,25 @@ html {
   /* font-size: 75%; 75% of browser settings.  Possible but usually not used. */
 }
 
-/* Fallback set up first if browser does not support "display: grid" */
 body {
   font-family: "Montserrat", sans-serif; /* Web font from Google Fonts */
   margin: 0;
-  padding-top: 3.5rem;
-}
+  /* height: 100%; */
 
-/* Check if our browser suppots a CSS feature */
-@supports (display: grid) {
-  body {
-    display: grid;
-    grid-template-rows: 3.5rem auto fit-content(8rem);
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
+  display: -ms-grid;
 
-    padding-top: 0;
-    height: 100%; /* We need this because our grid-tempalate-rows second row is set to "auto" */
-  }
+  display: grid;
+
+  -ms-grid-rows: 3.5rem auto fit-content(8rem);
+
+  grid-template-rows: 3.5rem auto fit-content(8rem);
+  /* padding-top: 3.5rem; */
+  height: 100%;
+
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
 }
 
 /* 
@@ -47,6 +48,8 @@ body {
   Then push down with margin-top: 3.5rem;
 */
 main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   /* min-height: calc(100vh - 3.5rem - 8rem); */
   /* margin-top: 3.5rem; */
   /* grid-row: 2 / 3; */
@@ -65,6 +68,10 @@ main {
   display: none;
   /* Remember we can apply transitions to opacity but not display property. */
   opacity: 0; /* Issue is it is displayed but just transparent. */
+
+  -webkit-transition: opacity 400ms linear;
+
+  -o-transition: opacity 400ms linear;
 
   transition: opacity 400ms linear;
 
@@ -88,10 +95,15 @@ main {
 
   display: -webkit-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
 
+  -webkit-box-align: center;
+
+  -ms-flex-align: center;
+
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -160,7 +172,13 @@ main {
   padding: 0;
   list-style: none;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
@@ -186,6 +204,7 @@ main {
 /* Animate cta */
 .main-nav__item--cta {
   /* animation: wiggle 200ms 3s 8 alternate; */
+  -webkit-animation: wiggle 400ms 3s 4 ease-out none;
   animation: wiggle 400ms 3s 4 ease-out none; /* none, forwards, backwards */
 }
 
@@ -213,8 +232,14 @@ main {
   /* display: none; */
 
   /* opacity: 1; */
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
   transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 400ms ease-in;
+  transition: -webkit-transform 400ms ease-in;
+  -o-transition: transform 400ms ease-in;
   transition: transform 400ms ease-in;
+  transition: transform 400ms ease-in, -webkit-transform 400ms ease-in;
 
   position: fixed;
   z-index: 101;
@@ -234,9 +259,20 @@ main {
   padding: 0;
   /* text-align: center; */
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -266,12 +302,16 @@ main {
     /* width: calc(100% - 44px); */
     /* text-align: right; */
     /* vertical-align: middle; */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
 
 /* Footer - start */
 .main-footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   background: black;
   padding: 2rem;
   margin-top: 3rem;
@@ -286,8 +326,17 @@ main {
   padding: 0;
   /* text-align: center; */
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -318,7 +367,12 @@ main {
   }
 
   .main-footer__links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
 }
@@ -360,6 +414,8 @@ main {
   display: block !important;
 
   opacity: 1 !important;
+  -webkit-transform: translateY(0) !important;
+  -ms-transform: translateY(0) !important;
   transform: translateY(0) !important;
 }
 
@@ -374,16 +430,36 @@ main {
   }
 } */
 
-@keyframes wiggle {
+@-webkit-keyframes wiggle {
   0% {
+    -webkit-transform: rotateZ(0) scale(0);
     transform: rotateZ(0) scale(0);
   }
 
   50% {
+    -webkit-transform: rotateZ(-10deg) scale(0.5);
     transform: rotateZ(-10deg) scale(0.5);
   }
 
   100% {
+    -webkit-transform: rotateZ(10deg) scale(2);
+    transform: rotateZ(10deg) scale(2);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    -webkit-transform: rotateZ(0) scale(0);
+    transform: rotateZ(0) scale(0);
+  }
+
+  50% {
+    -webkit-transform: rotateZ(-10deg) scale(0.5);
+    transform: rotateZ(-10deg) scale(0.5);
+  }
+
+  100% {
+    -webkit-transform: rotateZ(10deg) scale(2);
     transform: rotateZ(10deg) scale(2);
   }
 }
