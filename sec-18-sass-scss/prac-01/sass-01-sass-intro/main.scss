@@ -2,6 +2,19 @@
 
 @import "typography.scss";
 
+@mixin display-flex() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin media-min-width($width) {
+  @media (min-width: $width) {
+    @content; // Allows you to pass in dynamic content injected into the mixin
+  }
+}
+
 /* Variables directly placed on main.scss prior to placiing in _variables.scss partial
   // $main-color: #521751;
 
@@ -20,6 +33,14 @@
 
 html {
   font-size: 94.75%;
+
+  // @media (min-width: 40rem) {
+  //   font-size: 125%;
+  // }
+
+  @include media-min-width(40rem) {
+    font-size: 125%;
+  }
 }
 
 body {
@@ -28,11 +49,7 @@ body {
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-
-  display: flex;
+  @include display-flex();
   flex: {
     direction: column;
     wrap: nowrap;
@@ -45,14 +62,27 @@ body {
   box-sizing: border-box;
 }
 
-.sass-introduction {
+// Parent class
+.sass-section {
   border: $border-default;
   background: lighten(map-get($colors, main), 72%);
   padding: $size-default * 2;
   text-align: center;
-  box-shadow: $size-tiny $size-tiny $size-tiny/2 #ccc;
   width: 90%;
   box-sizing: border-box;
+
+  // @media (min-width: 40rem) {
+  //   width: 30rem;
+  // }
+
+  @include media-min-width(40rem) {
+    width: 30rem;
+  }
+}
+
+.sass-introduction {
+  @extend .sass-section;
+  box-shadow: $size-tiny $size-tiny $size-tiny/2 #ccc;
 
   p {
     margin: 0;
@@ -64,17 +94,8 @@ body {
 // }
 
 .sass-details {
-  border: $border-default;
-  // border: 0.05rem solid $main-color;
-
-  background: lighten(map-get($colors, main), 72%);
-  // background: #fae5ff;
-
-  padding: $size-default;
-  text-align: center;
+  @extend .sass-section;
   margin: $size-default * 2 0;
-  width: 90%;
-  box-sizing: border-box;
 }
 
 .section-header {
@@ -93,10 +114,9 @@ body {
   list-style: none;
   margin: $size-default 0 0 0;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+
+  @include display-flex();
+
   flex-direction: column;
 
   li {
@@ -110,14 +130,21 @@ body {
     display: block;
     padding: $size-tiny;
     border: $border-default;
+
+    &:hover,
+    &:active {
+      color: white;
+      background: map-get($colors, secondary);
+      border-color: map-get($colors, secondary);
+    }
   }
 
-  .documentation-link:hover,
-  .documentation-links .documentation-link:active {
-    color: white;
-    background: map-get($colors, secondary);
-    border-color: map-get($colors, secondary);
-  }
+  // .documentation-link:hover,
+  // .documentation-link:active {
+  //   color: white;
+  //   background: map-get($colors, secondary);
+  //   border-color: map-get($colors, secondary);
+  // }
 }
 
 @media (min-width: 40rem) {
